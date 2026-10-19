@@ -23,7 +23,7 @@ export function CourseCard({
     <Link
       href={`/courses/${course.slug}`}
       className={cn(
-        "group flex h-full flex-col overflow-hidden rounded-card border border-line bg-card shadow-card transition-shadow duration-300 hover:shadow-float",
+        "group flex h-full flex-col overflow-hidden rounded-card border border-line bg-card shadow-card transition-[box-shadow,transform] duration-500 ease-out-expo hover:-translate-y-1.5 hover:shadow-float",
         className,
       )}
     >

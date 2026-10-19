@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { Inter } from "next/font/google";
+import { Analytics } from "@/components/layout/Analytics";
 import { Footer } from "@/components/layout/footer/Footer";
 import { Header } from "@/components/layout/header/Header";
 import { MobileActionBar } from "@/components/layout/MobileActionBar";
@@ -96,6 +97,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
           </MotionProvider>
         </ThemeProvider>
         <JsonLd data={musicSchoolSchema(getSiteUrl())} />
+        <Analytics />
       </body>
     </html>
   );

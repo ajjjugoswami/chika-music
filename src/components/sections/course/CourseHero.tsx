@@ -1,6 +1,7 @@
 import { ChevronRight } from "lucide-react";
 import Link from "next/link";
 import { FaWhatsapp } from "react-icons/fa6";
+import { RevealImage } from "@/components/motion/RevealImage";
 import { AppImage } from "@/components/ui/AppImage";
 import { ButtonLink } from "@/components/ui/ButtonLink";
 import { LevelRange } from "@/components/ui/LevelRange";
@@ -53,14 +54,14 @@ export function CourseHero({ course }: { course: Course }) {
         />
       </div>
 
-      <div className="rise rise-2 grid grid-cols-[1.4fr_1fr] gap-3">
-        <div className="relative row-span-2 aspect-3/4 overflow-hidden rounded-panel bg-surface">
+      <div className="grid grid-cols-[1.4fr_1fr] gap-3">
+        <RevealImage onLoad className="row-span-2 aspect-3/4 rounded-panel bg-surface">
           <AppImage image={getImage(course.heroImageId)} sizes="(min-width: 1024px) 30vw, 60vw" preload />
-        </div>
-        {[first, second].map((image) => (
-          <div key={image.src} className="relative overflow-hidden rounded-card bg-surface">
+        </RevealImage>
+        {[first, second].map((image, index) => (
+          <RevealImage key={image.src} onLoad delay={0.15 + index * 0.12} className="rounded-card bg-surface">
             <AppImage image={image} sizes="(min-width: 1024px) 20vw, 40vw" />
-          </div>
+          </RevealImage>
         ))}
       </div>
     </section>

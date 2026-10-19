@@ -1,4 +1,5 @@
 import { FaWhatsapp } from "react-icons/fa6";
+import { Parallax } from "@/components/motion/Parallax";
 import { Reveal } from "@/components/motion/Reveal";
 import { AppImage } from "@/components/ui/AppImage";
 import { ButtonLink } from "@/components/ui/ButtonLink";
@@ -42,7 +43,9 @@ export function TrialCta({ courseSlug, courseName, imageId = "guitar-hero" }: Tr
           </div>
         </div>
         <div className="relative min-h-64 lg:min-h-full">
-          <AppImage image={getImage(imageId)} sizes="(min-width: 1024px) 45vw, 100vw" />
+          <Parallax>
+            <AppImage image={getImage(imageId)} sizes="(min-width: 1024px) 45vw, 100vw" />
+          </Parallax>
         </div>
       </Reveal>
     </section>

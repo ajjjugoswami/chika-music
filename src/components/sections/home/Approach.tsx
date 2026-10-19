@@ -1,4 +1,6 @@
+import { Parallax } from "@/components/motion/Parallax";
 import { Reveal } from "@/components/motion/Reveal";
+import { RevealImage } from "@/components/motion/RevealImage";
 import { AppImage } from "@/components/ui/AppImage";
 import { ButtonLink } from "@/components/ui/ButtonLink";
 import { HighlightGrid } from "@/components/ui/HighlightGrid";
@@ -22,9 +24,11 @@ export function Approach() {
               </>
             }
           />
-          <Reveal className="relative aspect-video overflow-hidden rounded-card">
-            <AppImage image={getImage("harmonium-02")} sizes="(min-width: 1024px) 40vw, 100vw" />
-          </Reveal>
+          <RevealImage className="aspect-video rounded-card">
+            <Parallax>
+              <AppImage image={getImage("harmonium-02")} sizes="(min-width: 1024px) 40vw, 100vw" />
+            </Parallax>
+          </RevealImage>
         </div>
 
         <HighlightGrid items={academyValues} tone="light" className="mt-10 lg:grid-cols-3" />

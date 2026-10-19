@@ -22,7 +22,7 @@ const VARIANTS: Record<ButtonVariant, string> = {
 
 export const buttonClassName = (variant: ButtonVariant, className?: string, size: ButtonSize = "lg") =>
   cn(
-    "group inline-flex items-center justify-center gap-2 whitespace-nowrap transition-colors duration-200 [&>svg]:shrink-0",
+    "group inline-flex items-center justify-center gap-2 whitespace-nowrap transition-[color,background-color,transform] duration-200 active:scale-[0.97] [&>svg]:shrink-0",
     variant !== "link" && SIZES[size],
     VARIANTS[variant],
     className,

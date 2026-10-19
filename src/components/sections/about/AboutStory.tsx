@@ -1,4 +1,6 @@
+import { Parallax } from "@/components/motion/Parallax";
 import { Reveal } from "@/components/motion/Reveal";
+import { RevealImage } from "@/components/motion/RevealImage";
 import { AppImage } from "@/components/ui/AppImage";
 import { Eyebrow } from "@/components/ui/Eyebrow";
 import { siteConfig } from "@/content/site";
@@ -10,8 +12,10 @@ export function AboutStory() {
 
   return (
     <section className="container-x grid gap-12 pb-section lg:grid-cols-[1fr_1.1fr] lg:items-center lg:gap-16">
-      <Reveal className="relative aspect-4/5 max-h-[36rem] overflow-hidden rounded-panel bg-surface">
-        <AppImage image={getImage("academy-perform")} sizes="(min-width: 1024px) 45vw, 100vw" />
+      <RevealImage className="aspect-4/5 max-h-144 rounded-panel bg-surface">
+        <Parallax>
+          <AppImage image={getImage("academy-perform")} sizes="(min-width: 1024px) 45vw, 100vw" />
+        </Parallax>
         <div className="absolute inset-x-4 bottom-4 flex items-center gap-3 rounded-2xl bg-card/90 p-3 shadow-float backdrop-blur-md">
           <span className="grid size-11 place-items-center rounded-full bg-accent text-[14px] font-semibold text-white">
             {getInitials(founder)}
@@ -21,7 +25,7 @@ export function AboutStory() {
             <p className="text-[13px] text-muted">Founder & teacher</p>
           </div>
         </div>
-      </Reveal>
+      </RevealImage>
 
       <Reveal delay={0.1} className="space-y-5 text-[16.5px] leading-relaxed text-ink-soft">
         <Eyebrow>Our story</Eyebrow>

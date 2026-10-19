@@ -1,5 +1,5 @@
 import type { ReactNode } from "react";
-import { Reveal } from "@/components/motion/Reveal";
+import { Reveal, RevealItem, RevealLine } from "@/components/motion/Reveal";
 import { cn } from "@/lib/utils/cn";
 import { Eyebrow } from "./Eyebrow";
 
@@ -27,6 +27,7 @@ export function SectionIntro({
 
   return (
     <Reveal
+      stagger
       className={cn(
         "flex flex-col gap-6",
         centered ? "items-center text-center" : "md:flex-row md:items-end md:justify-between",
@@ -34,13 +35,19 @@ export function SectionIntro({
       )}
     >
       <div className={cn(centered ? "flex max-w-3xl flex-col items-center" : "max-w-2xl")}>
-        <Eyebrow tone={tone}>{label}</Eyebrow>
-        <h2 className={cn("mt-4 text-display-lg", light && "text-white")}>{title}</h2>
+        <RevealItem>
+          <Eyebrow tone={tone}>{label}</Eyebrow>
+        </RevealItem>
+        <h2 className={cn("mt-4 text-display-lg", light && "text-white")}>
+          <RevealLine>{title}</RevealLine>
+        </h2>
         {description && (
-          <p className={cn("mt-4 max-w-xl text-lead", light ? "text-white/60" : "text-muted")}>{description}</p>
+          <RevealItem>
+            <p className={cn("mt-4 max-w-xl text-lead", light ? "text-white/60" : "text-muted")}>{description}</p>
+          </RevealItem>
         )}
       </div>
-      {action && <div className="shrink-0">{action}</div>}
+      {action && <RevealItem className="shrink-0">{action}</RevealItem>}
     </Reveal>
   );
 }

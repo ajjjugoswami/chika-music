@@ -12,6 +12,7 @@ import { CoursesMenu } from "./CoursesMenu";
 import styles from "./Header.module.css";
 import { MenuToggle } from "./MenuToggle";
 import { MobileMenu } from "./MobileMenu";
+import { ScrollProgress } from "./ScrollProgress";
 
 export function Header() {
   const pathname = usePathname();
@@ -78,6 +79,7 @@ export function Header() {
           </div>
         </div>
 
+        <ScrollProgress />
         {open && <MobileMenu onClose={() => setOpen(false)} />}
       </header>
       <div aria-hidden className="h-header" />

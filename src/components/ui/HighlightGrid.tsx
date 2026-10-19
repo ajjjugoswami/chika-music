@@ -18,8 +18,10 @@ export function HighlightGrid({ items, numbered = false, tone = "default", class
         <RevealItem
           key={item.title}
           className={cn(
-            "flex flex-col rounded-card p-6 md:p-7",
-            light ? "bg-white/5 ring-1 ring-white/10 ring-inset" : "border border-line bg-card shadow-card",
+            "flex flex-col rounded-card p-6 transition-[background-color,box-shadow,transform] duration-500 ease-out-expo hover:-translate-y-1 md:p-7",
+            light
+              ? "bg-white/5 ring-1 ring-white/10 ring-inset hover:bg-white/8"
+              : "border border-line bg-card shadow-card hover:shadow-float",
           )}
         >
           {numbered && (

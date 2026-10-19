@@ -10,7 +10,7 @@ interface ContactCardProps {
 
 export function ContactCard({ icon, title, description, action }: ContactCardProps) {
   return (
-    <div className="flex h-full flex-col rounded-card border border-line bg-card p-6 shadow-card md:p-7">
+    <div className="flex h-full flex-col rounded-card border border-line bg-card p-6 shadow-card transition-[box-shadow,transform] duration-500 ease-out-expo hover:-translate-y-1 hover:shadow-float md:p-7">
       <span className="grid size-11 place-items-center rounded-full bg-surface">{icon}</span>
       <h2 className="mt-6 text-[1.25rem] leading-tight tracking-[-0.025em]">{title}</h2>
       <p className="mt-2 text-[15px] leading-relaxed text-muted">{description}</p>

@@ -32,6 +32,11 @@ export const siteConfig: SiteConfig = {
   },
 };
 
+export const analyticsConfig = {
+  trackerSrc: "https://quantalog-be.daorbit.in/tracker.js",
+  siteId: "o7K3OVNNMLmjhANp",
+};
+
 export const mainNav: NavItem[] = [
   { label: "About", href: "/about" },
   { label: "Fees & FAQ", href: "/fees" },
