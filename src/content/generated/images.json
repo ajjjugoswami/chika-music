@@ -1,0 +1,80 @@
+{
+  "guitar-hero": {
+    "src": "/images/courses/guitar/hero.webp",
+    "width": 960,
+    "height": 1344,
+    "blurDataURL": "data:image/webp;base64,UklGRp4AAABXRUJQVlA4IJIAAACQBACdASoQABYAPu1iqU2ppaOiMAgBMB2JagCdMoMzGEi3ygOfsI0EnyOgMMAA/u6Rh7D49V9fhAroiN9U2tFWlnB3CYfFZvo/wnsNFIY4TtRMOHvhw9M9ziNqCxeumfEsQCIIV2dktfDL8tzsNOMsdBliBoJ4QrDPW4tjsJt5Mu/sFtpVuPRoloAZWnxtE+wAAA=="
+  },
+  "guitar-01": {
+    "src": "/images/courses/guitar/01.webp",
+    "width": 960,
+    "height": 640,
+    "blurDataURL": "data:image/webp;base64,UklGRoIAAABXRUJQVlA4IHYAAAAwAgCdASoQAAsAA4BaJbACdAYuluFhCjCLAAD9ti1a84MG6Fw15QigYbzgjBEvlfEFFeAnGhSgv0YndZXCYuv4Qpc5uAaNWdKQdBOWHnaMm1UGL1VzhC4iukQwIpmnjbOfh5F13nkBHNtbCrDZ/6WAQUA4gAAA"
+  },
+  "guitar-02": {
+    "src": "/images/courses/guitar/02.webp",
+    "width": 960,
+    "height": 639,
+    "blurDataURL": "data:image/webp;base64,UklGRkgAAABXRUJQVlA4IDwAAADQAQCdASoQAAsAA4BaJZwAAmrrrcw4AAD9qzsLhKo6VV1/yViOcjGkTc8bjDCYz8C8H5u309jw1WsigAA="
+  },
+  "piano-hero": {
+    "src": "/images/courses/piano/hero.webp",
+    "width": 2000,
+    "height": 1333,
+    "blurDataURL": "data:image/webp;base64,UklGRmoAAABXRUJQVlA4IF4AAAAwAgCdASoQAAsAA4BaJQBdgMW+3KpGacRE6AD++FIZz/uPMWSsTSu3GBn5rjnEB4bvLmFxuvozdm7LJfjqyLXQ/zVsEXk2t8p46xYPpCH8GKLQms425N45wrCiAAAA"
+  },
+  "piano-01": {
+    "src": "/images/courses/piano/01.webp",
+    "width": 1024,
+    "height": 683,
+    "blurDataURL": "data:image/webp;base64,UklGRmgAAABXRUJQVlA4IFwAAADQAQCdASoQAAsAA4BaJQBOgBoTz+PmAAD+8YawtM3+vvptSLj3dgmVwMmByTMg3Lol5+ivhTZjdyNJxpcRkhPfeO0H0hpYfSMOg3jOHXCwUO4GmZT6YsU3EV8AAA=="
+  },
+  "piano-02": {
+    "src": "/images/courses/piano/02.webp",
+    "width": 2000,
+    "height": 1500,
+    "blurDataURL": "data:image/webp;base64,UklGRmwAAABXRUJQVlA4IGAAAAAwAgCdASoQAAwAA4BaJZQC7AdwLebpCJUnIAD+yoGuL5mN1gZzRUwy4j7WqGoX14YNKJR1pPhp/WOuvZxWyf9EnKdNTduEkz9NSWfD008oFah3AODS43HzNHDJlARYIAA="
+  },
+  "harmonium-hero": {
+    "src": "/images/courses/harmonium/hero.webp",
+    "width": 2000,
+    "height": 1259,
+    "blurDataURL": "data:image/webp;base64,UklGRmAAAABXRUJQVlA4IFQAAAAQAgCdASoQAAoAA4BaJbACdAEDoIAi3NxwAP7QLSc+vK6PUHsQhc10oKWGj4S5nyH7nEEg3IX/aI0b//h4CP6HdP251W+fbcCE+h5CxDWJXb8AAAA="
+  },
+  "harmonium-01": {
+    "src": "/images/courses/harmonium/01.webp",
+    "width": 2000,
+    "height": 1500,
+    "blurDataURL": "data:image/webp;base64,UklGRmQAAABXRUJQVlA4IFgAAADwAQCdASoQAAwAA4BaJbACdADzs2f6hcAA/uzYz5C6iuo+NLeN1Qd1/kETRtA6uaPca64oR2vE35XuwuGAeVh8qqu0LmR3KWdVU9vqw+uti+bxmzVQAAAA"
+  },
+  "harmonium-02": {
+    "src": "/images/courses/harmonium/02.webp",
+    "width": 2000,
+    "height": 1335,
+    "blurDataURL": "data:image/webp;base64,UklGRm4AAABXRUJQVlA4IGIAAADwAQCdASoQAAsAA4BaJQBOgCBQbFhKGAAA/upDYbqeeHCDyvyuuao0Nel0i5xB9/sKcIK/ndteIbVkIvh5wKUeFXFiokHLLBt9ojWRNl53v05Drj/Usp/e98McTwBHsv5gAA=="
+  },
+  "vocal-hero": {
+    "src": "/images/courses/vocal/hero.webp",
+    "width": 960,
+    "height": 640,
+    "blurDataURL": "data:image/webp;base64,UklGRnAAAABXRUJQVlA4IGQAAABwAgCdASoQAAsAA4BaJbACsAYuHuFnmUV+6BQAAP7sw8o5LLY/nCetyrs6Rh7EEITvLb698vpPA7uw0BaaDjXtnpq1KHvHxnSzgHbBnoXJw3BAsVSC80GM/nWZu0ekZmKQ/wAA"
+  },
+  "vocal-01": {
+    "src": "/images/courses/vocal/01.webp",
+    "width": 960,
+    "height": 640,
+    "blurDataURL": "data:image/webp;base64,UklGRloAAABXRUJQVlA4IE4AAADwAQCdASoQAAsAA4BaJZwAAfYP4+GWpoAA/tObphjZJFFwHwqn/9TlnuW45IRFMdkaj1xU+wVTFz7JW5U1oTAANUauHcKykoV24qt44AA="
+  },
+  "vocal-02": {
+    "src": "/images/courses/vocal/02.webp",
+    "width": 960,
+    "height": 638,
+    "blurDataURL": "data:image/webp;base64,UklGRkoAAABXRUJQVlA4ID4AAADwAQCdASoQAAsAA4BaJYwCdAEfB5MitYAA/tKUMp9k1y2Cq4qcKqcHLeUpbNLq63CPmYpp5NEhYjKVswPQAA=="
+  },
+  "academy-perform": {
+    "src": "/images/academy/perform.webp",
+    "width": 960,
+    "height": 640,
+    "blurDataURL": "data:image/webp;base64,UklGRmAAAABXRUJQVlA4IFQAAADwAQCdASoQAAsAA4BaJbACdAEQXLSMzIAA/tbaPBkcfe40QUN76ttJ2co8d9bC9SpKotPBJ/vxYYgSD6xP/ts/+HiU0ff7NDPZvhe7QFDP2FpAAAA="
+  }
+}

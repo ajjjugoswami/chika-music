@@ -4,6 +4,7 @@ import { useMotionValueEvent, useScroll } from "motion/react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
+import { ArrowNudge } from "@/components/ui/ButtonLink";
 import { Logo } from "@/components/ui/Logo";
 import { ThemeToggle } from "@/components/ui/ThemeToggle";
 import { mainNav } from "@/content/site";
@@ -23,7 +24,7 @@ export function Header() {
     setOpen(false);
   }
 
-  useMotionValueEvent(scrollY, "change", (value) => setScrolled(value > 24));
+  useMotionValueEvent(scrollY, "change", (value) => setScrolled(value > 8));
 
   useEffect(() => {
     if (!open) return;
@@ -46,10 +47,12 @@ export function Header() {
   return (
     <>
       <header className={styles.header} data-scrolled={scrolled || undefined} data-menu-open={open || undefined}>
-        <div className="container-x flex h-header items-center justify-between gap-4 lg:grid lg:grid-cols-[1fr_auto_1fr]">
-          <Logo />
+        <div className="container-x flex h-header items-center gap-4">
+          <div className="flex flex-1 items-center">
+            <Logo />
+          </div>
 
-          <nav aria-label="Main" className="hidden items-center gap-1 self-stretch lg:flex">
+          <nav aria-label="Main" className="hidden shrink-0 items-center gap-0.5 self-stretch lg:flex">
             <CoursesMenu active={isActive("/courses")} />
             {mainNav.map((item) => (
               <Link
@@ -63,10 +66,13 @@ export function Header() {
             ))}
           </nav>
 
-          <div className="flex items-center justify-end gap-1.5">
+          <div className="flex flex-1 items-center justify-end gap-1.5">
             <ThemeToggle className={styles.iconButton} />
-            <Link href="/book-trial" className={styles.cta}>
+            <Link href="/book-trial" className={`group ${styles.cta}`}>
               Book a trial
+              <span className="hidden sm:inline-flex">
+                <ArrowNudge />
+              </span>
             </Link>
             <MenuToggle open={open} onToggle={toggle} />
           </div>

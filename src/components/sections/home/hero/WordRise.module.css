@@ -1,0 +1,46 @@
+.word {
+  display: inline-block;
+  padding-bottom: 0.1em;
+  margin-bottom: -0.1em;
+  animation: word-in 1s var(--ease-out-expo) both;
+}
+
+.delay0 {
+  animation-delay: 0.1s;
+}
+
+.delay1 {
+  animation-delay: 0.17s;
+}
+
+.delay2 {
+  animation-delay: 0.24s;
+}
+
+.delay3 {
+  animation-delay: 0.31s;
+}
+
+.delay4 {
+  animation-delay: 0.38s;
+}
+
+.delay5 {
+  animation-delay: 0.45s;
+}
+
+.delay6 {
+  animation-delay: 0.52s;
+}
+
+.delay7 {
+  animation-delay: 0.59s;
+}
+
+@keyframes word-in {
+  from {
+    opacity: 0;
+    filter: blur(8px);
+    transform: translateY(0.4em);
+  }
+}

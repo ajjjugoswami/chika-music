@@ -29,12 +29,13 @@
 }
 
 .primary {
-  color: #ffffff;
-  background-color: var(--color-accent);
+  font-weight: 600;
+  color: var(--color-cta-fg);
+  background-color: var(--color-cta);
 }
 
 .primary:active {
-  background-color: var(--color-accent-hover);
+  background-color: var(--color-cta-hover);
 }
 
 @media (min-width: 48rem) {

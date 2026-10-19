@@ -1,10 +1,13 @@
 import Link from "next/link";
 import { FaWhatsapp } from "react-icons/fa6";
+import { ArrowNudge } from "@/components/ui/ButtonLink";
 import { Logo } from "@/components/ui/Logo";
+import { ThemeToggle } from "@/components/ui/ThemeToggle";
 import { siteConfig } from "@/content/site";
 import { getAllCourses } from "@/lib/data/courses";
 import { mapDirectionsUrl } from "@/lib/utils/maps";
 import { buildWhatsAppLink } from "@/lib/utils/whatsapp";
+import styles from "./Footer.module.css";
 import { FooterColumn } from "./FooterColumn";
 
 const ACADEMY_LINKS = [
@@ -14,70 +17,97 @@ const ACADEMY_LINKS = [
   { label: "Book a trial", href: "/book-trial" },
 ];
 
+const LEGAL_LINKS = [
+  { label: "Photo credits", href: "/credits" },
+  { label: "Contact", href: "/contact" },
+  { label: "Book a trial", href: "/book-trial" },
+];
+
 export function Footer() {
   const { contact, address, hours } = siteConfig;
   const courseLinks = getAllCourses().map((course) => ({ label: course.name, href: `/courses/${course.slug}` }));
-  const year = new Date().getFullYear();
 
   return (
-    <footer className="border-t border-line bg-surface">
-      <div className="container-x py-16 md:py-20">
-        <div className="grid gap-12 md:grid-cols-[1.4fr_1fr_1fr_1.2fr]">
-          <div className="max-w-sm">
+    <footer className={styles.footer}>
+      <div className="container-x pt-14 sm:pt-16">
+        <div className="grid grid-cols-2 gap-x-6 gap-y-10 lg:grid-cols-6">
+          <div className="col-span-2">
             <Logo />
-            <p className="mt-6 font-display text-[1.75rem] leading-tight italic">“{siteConfig.tagline}.”</p>
-            <a
-              href={buildWhatsAppLink()}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="mt-6 inline-flex items-center gap-2 text-[15px] font-medium text-accent-text hover:underline"
-            >
-              <FaWhatsapp className="size-4" />
-              Message us on WhatsApp
-            </a>
+            <p className="mt-4 max-w-xs text-[14px] leading-relaxed text-muted">{siteConfig.description}</p>
+            <p className="mt-5 inline-flex items-center gap-2 rounded-full border border-line bg-card px-3 py-1 text-[12.5px] text-muted">
+              <span className={styles.liveDot} />
+              Admissions open for new students
+            </p>
           </div>
 
           <FooterColumn title="Courses" links={courseLinks} />
           <FooterColumn title="Academy" links={ACADEMY_LINKS} />
 
-          <div>
-            <p className="eyebrow text-muted">Visit</p>
-            <address className="mt-5 space-y-1.5 text-[15px] not-italic">
-              <p>{siteConfig.name}</p>
+          <div className="col-span-2 sm:col-span-1">
+            <h2 className="text-[13px] font-semibold">Visit</h2>
+            <address className="mt-4 space-y-2.5 text-[13.5px] text-muted not-italic">
               <p>
-                {address.locality}, {address.city}, {address.region}
+                {address.locality}, {address.city}
+                <br />
+                {address.region}, India
               </p>
-              <p>
-                <a href={`tel:${contact.phoneE164}`} className="hover:text-accent-text">
-                  {contact.phoneDisplay}
-                </a>
-              </p>
-            </address>
-            <ul className="mt-5 space-y-1 text-[14px] text-muted">
               {hours.map((slot) => (
-                <li key={slot.days}>
-                  {slot.days}: {slot.time}
-                </li>
+                <p key={slot.days}>
+                  {slot.days}
+                  <br />
+                  {slot.time}
+                </p>
               ))}
-            </ul>
-            <a
-              href={mapDirectionsUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="mt-5 inline-block text-[14px] font-medium underline underline-offset-4 hover:text-accent-text"
-            >
-              Get directions
-            </a>
+              <a
+                href={mapDirectionsUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group inline-flex items-center gap-1.5 hover:text-ink"
+              >
+                Get directions
+                <ArrowNudge />
+              </a>
+            </address>
+          </div>
+
+          <div className="col-span-2 sm:col-span-1">
+            <h2 className="text-[13px] font-semibold">Talk to us</h2>
+            <div className="mt-4 space-y-2.5 text-[13.5px] text-muted">
+              <a href={`tel:${contact.phoneE164}`} className="block hover:text-ink">
+                {contact.phoneDisplay}
+              </a>
+              <a
+                href={buildWhatsAppLink()}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1.5 hover:text-ink"
+              >
+                <FaWhatsapp className="size-3.5 text-[#25d366]" />
+                WhatsApp
+              </a>
+              <p>{siteConfig.founder}</p>
+            </div>
           </div>
         </div>
 
-        <div className="mt-16 flex flex-col gap-3 border-t border-line pt-8 text-[13px] text-muted sm:flex-row sm:justify-between">
-          <p>
-            © {year} {siteConfig.name}, {address.city}. All rights reserved.
-          </p>
-          <p>
-            Founded by <Link href="/about" className="hover:text-ink">{siteConfig.founder}</Link>
-          </p>
+        <div className="mt-14 flex flex-col gap-5 border-t border-line py-6 lg:flex-row lg:items-center lg:justify-between">
+          <nav aria-label="Footer" className="lg:order-2">
+            <ul className="flex flex-wrap items-center gap-x-6 gap-y-2">
+              {LEGAL_LINKS.map((link) => (
+                <li key={link.label}>
+                  <Link href={link.href} className="text-[13.5px] transition-colors hover:text-muted">
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </nav>
+          <div className="flex items-center justify-between gap-4 lg:contents">
+            <p className="text-[13.5px] text-muted lg:order-1">
+              © {new Date().getFullYear()} {siteConfig.name}, {address.city}.
+            </p>
+            <ThemeToggle className="lg:order-3" />
+          </div>
         </div>
       </div>
     </footer>

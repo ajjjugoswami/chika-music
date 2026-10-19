@@ -1,0 +1,15 @@
+export const imageManifest = [
+  { id: "guitar-hero", file: "g4.jpg", out: "courses/guitar/hero.webp" },
+  { id: "guitar-01", file: "g2.jpg", out: "courses/guitar/01.webp" },
+  { id: "guitar-02", file: "g1.jpg", out: "courses/guitar/02.webp" },
+  { id: "piano-hero", file: "p1.jpg", out: "courses/piano/hero.webp" },
+  { id: "piano-01", file: "p4.jpg", out: "courses/piano/01.webp" },
+  { id: "piano-02", file: "p2.jpg", out: "courses/piano/02.webp" },
+  { id: "harmonium-hero", file: "h3.jpg", out: "courses/harmonium/hero.webp" },
+  { id: "harmonium-01", file: "h2.jpg", out: "courses/harmonium/01.webp" },
+  { id: "harmonium-02", file: "h1.jpg", out: "courses/harmonium/02.webp" },
+  { id: "vocal-hero", file: "v3.jpg", out: "courses/vocal/hero.webp" },
+  { id: "vocal-01", file: "v5.jpg", out: "courses/vocal/01.webp" },
+  { id: "vocal-02", file: "v4.jpg", out: "courses/vocal/02.webp" },
+  { id: "academy-perform", file: "m2.jpg", out: "academy/perform.webp" },
+];

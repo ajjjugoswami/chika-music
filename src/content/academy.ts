@@ -1,11 +1,6 @@
 import type { Faq, Highlight } from "@/types/site";
 
-export const academyFacts: Highlight[] = [
-  { title: "4 courses", description: "Guitar, piano, harmonium and vocal" },
-  { title: "Ages 5+", description: "Children, teens and adults welcome" },
-  { title: "Personal", description: "One-to-one and small-batch classes" },
-  { title: "Trial class", description: "Meet your teacher before you join" },
-];
+export const heroTrustPoints = ["Ages 5 and up", "One-to-one & small batches", "Trial class before you join"];
 
 export const learningPath: Highlight[] = [
   {

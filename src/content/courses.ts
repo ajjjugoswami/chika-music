@@ -46,8 +46,8 @@ export const courses: Course[] = [
           "You can use an academy guitar in class. For daily practice at home you'll want your own — we're happy to suggest a good beginner instrument for your budget.",
       },
     ],
-    motif: "strings",
-    tone: "walnut",
+    heroImageId: "guitar-hero",
+    galleryImageIds: ["guitar-01", "guitar-02"],
   },
   {
     slug: "piano",
@@ -94,8 +94,8 @@ export const courses: Course[] = [
           "Yes. A 61-key keyboard is fine for beginners. As you progress, a weighted 88-key digital piano helps build proper technique.",
       },
     ],
-    motif: "keys",
-    tone: "stage",
+    heroImageId: "piano-hero",
+    galleryImageIds: ["piano-01", "piano-02"],
   },
   {
     slug: "harmonium",
@@ -141,8 +141,8 @@ export const courses: Course[] = [
         answer: "Not at all. We start from sargam and build up step by step.",
       },
     ],
-    motif: "reeds",
-    tone: "rosewood",
+    heroImageId: "harmonium-hero",
+    galleryImageIds: ["harmonium-01", "harmonium-02"],
   },
   {
     slug: "vocal",
@@ -189,7 +189,7 @@ export const courses: Course[] = [
           "Classical technique is the foundation, but you'll apply it to the songs you love — Bollywood, devotional, ghazal and more.",
       },
     ],
-    motif: "wave",
-    tone: "midnight",
+    heroImageId: "vocal-hero",
+    galleryImageIds: ["vocal-01", "vocal-02"],
   },
 ];

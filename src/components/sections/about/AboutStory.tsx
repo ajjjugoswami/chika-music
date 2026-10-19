@@ -1,29 +1,30 @@
 import { Reveal } from "@/components/motion/Reveal";
-import { CourseMotif } from "@/components/ui/motif/CourseMotif";
+import { AppImage } from "@/components/ui/AppImage";
+import { Eyebrow } from "@/components/ui/Eyebrow";
 import { siteConfig } from "@/content/site";
+import { getImage } from "@/lib/data/images";
 import { getInitials } from "@/lib/utils/format";
 
 export function AboutStory() {
   const { founder, address, name } = siteConfig;
 
   return (
-    <section className="container-x grid gap-12 pb-section lg:grid-cols-[1fr_1.15fr] lg:items-center lg:gap-20">
-      <Reveal>
-        <CourseMotif variant="wave" tone="midnight" className="aspect-4/5 max-h-[36rem]">
-          <div className="flex h-full flex-col justify-between p-7 md:p-9">
-            <span className="grid size-16 place-items-center rounded-full bg-accent font-display text-[1.75rem]">
-              {getInitials(founder)}
-            </span>
-            <div>
-              <p className="font-display text-[2.25rem] leading-none">{founder}</p>
-              <p className="mt-2 text-[14px] text-white/60">Founder & teacher</p>
-            </div>
+    <section className="container-x grid gap-12 pb-section lg:grid-cols-[1fr_1.1fr] lg:items-center lg:gap-16">
+      <Reveal className="relative aspect-4/5 max-h-[36rem] overflow-hidden rounded-panel bg-surface">
+        <AppImage image={getImage("academy-perform")} sizes="(min-width: 1024px) 45vw, 100vw" />
+        <div className="absolute inset-x-4 bottom-4 flex items-center gap-3 rounded-2xl bg-card/90 p-3 shadow-float backdrop-blur-md">
+          <span className="grid size-11 place-items-center rounded-full bg-accent text-[14px] font-semibold text-white">
+            {getInitials(founder)}
+          </span>
+          <div>
+            <p className="text-[15px] font-semibold">{founder}</p>
+            <p className="text-[13px] text-muted">Founder & teacher</p>
           </div>
-        </CourseMotif>
+        </div>
       </Reveal>
 
-      <Reveal delay={0.1} className="space-y-6 text-[17px] leading-relaxed text-ink-soft">
-        <p className="eyebrow text-accent-text">Our story</p>
+      <Reveal delay={0.1} className="space-y-5 text-[16.5px] leading-relaxed text-ink-soft">
+        <Eyebrow>Our story</Eyebrow>
         <h2 className="text-display-md text-ink">A neighbourhood academy with serious musical roots.</h2>
         <p>
           {name} was founded by {founder} in {address.locality}, {address.city}, with a simple belief: anyone can learn

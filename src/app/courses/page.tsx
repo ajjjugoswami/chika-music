@@ -28,10 +28,10 @@ export default function CoursesPage() {
         description="Four courses, each taught from first lesson to advanced level, with personal attention at every step."
       />
       <section className="container-x pb-section">
-        <Reveal stagger className="grid gap-x-5 gap-y-12 sm:grid-cols-2">
-          {courses.map((course, index) => (
+        <Reveal stagger className="grid gap-4 sm:grid-cols-2">
+          {courses.map((course) => (
             <RevealItem key={course.slug}>
-              <CourseCard course={course} index={index} />
+              <CourseCard course={course} imageClassName="aspect-16/10" sizes="(min-width: 640px) 50vw, 100vw" />
             </RevealItem>
           ))}
         </Reveal>

@@ -1,6 +1,7 @@
 import type { ReactNode } from "react";
 import { Reveal } from "@/components/motion/Reveal";
 import { cn } from "@/lib/utils/cn";
+import { Eyebrow } from "./Eyebrow";
 
 interface SectionIntroProps {
   label: string;
@@ -32,11 +33,11 @@ export function SectionIntro({
         className,
       )}
     >
-      <div className={cn(centered ? "max-w-3xl" : "max-w-2xl")}>
-        <p className={cn("eyebrow mb-4", light ? "text-accent-bright" : "text-accent-text")}>{label}</p>
-        <h2 className="text-display-lg">{title}</h2>
+      <div className={cn(centered ? "flex max-w-3xl flex-col items-center" : "max-w-2xl")}>
+        <Eyebrow tone={tone}>{label}</Eyebrow>
+        <h2 className={cn("mt-4 text-display-lg", light && "text-white")}>{title}</h2>
         {description && (
-          <p className={cn("mt-5 text-lead", light ? "text-white/65" : "text-muted")}>{description}</p>
+          <p className={cn("mt-4 max-w-xl text-lead", light ? "text-white/60" : "text-muted")}>{description}</p>
         )}
       </div>
       {action && <div className="shrink-0">{action}</div>}

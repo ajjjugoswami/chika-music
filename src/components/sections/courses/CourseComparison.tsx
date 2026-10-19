@@ -1,14 +1,16 @@
 import Link from "next/link";
+import type { ReactNode } from "react";
+import { LevelRange } from "@/components/ui/LevelRange";
 import { Reveal } from "@/components/motion/Reveal";
 import { SectionIntro } from "@/components/ui/SectionIntro";
 import { formatModes } from "@/lib/data/courses";
 import type { Course } from "@/types/course";
 
-const ROWS: { label: string; render: (course: Course) => string }[] = [
+const ROWS: { label: string; render: (course: Course) => ReactNode }[] = [
   { label: "Start from age", render: (course) => `${course.minAge}+` },
   { label: "Where", render: (course) => formatModes(course.modes) },
   { label: "Styles", render: (course) => course.styles.slice(0, 3).join(", ") },
-  { label: "Levels", render: () => "Beginner → Advanced" },
+  { label: "Levels", render: () => <LevelRange /> },
 ];
 
 export function CourseComparison({ courses }: { courses: Course[] }) {
@@ -26,7 +28,7 @@ export function CourseComparison({ courses }: { courses: Course[] }) {
                 <th key={course.slug} scope="col" className="p-5">
                   <Link
                     href={`/courses/${course.slug}`}
-                    className="font-display text-[1.625rem] font-normal hover:text-accent-text"
+                    className="text-[1.0625rem] font-semibold tracking-[-0.02em] hover:text-accent-text"
                   >
                     {course.name}
                   </Link>

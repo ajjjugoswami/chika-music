@@ -1,0 +1,150 @@
+.stage {
+  position: relative;
+  isolation: isolate;
+  aspect-ratio: 1 / 1;
+  width: 100%;
+  max-width: 40rem;
+  margin-inline: auto;
+  background: radial-gradient(
+    45% 45% at 50% 55%,
+    color-mix(in srgb, var(--color-accent) 14%, transparent) 0%,
+    transparent 70%
+  );
+}
+
+.rings {
+  position: absolute;
+  top: 58%;
+  left: 50%;
+  width: 0;
+  height: 0;
+}
+
+.rings span {
+  position: absolute;
+  top: -7rem;
+  left: -7rem;
+  width: 14rem;
+  height: 14rem;
+  border-radius: 50%;
+  border: 1.5px solid color-mix(in srgb, var(--color-accent) 45%, transparent);
+  opacity: 0;
+  animation: ring 3.6s var(--ease-out-expo) infinite;
+}
+
+.rings span:nth-child(2) {
+  animation-delay: 0.3s;
+}
+
+.rings span:nth-child(3) {
+  animation-delay: 0.6s;
+}
+
+.guitar {
+  position: absolute;
+  top: 6%;
+  left: 50%;
+  height: 92%;
+  aspect-ratio: 220 / 520;
+  margin-left: calc(-92% * 220 / 520 / 2);
+  transform-origin: 50% 72%;
+  animation: sway 7s var(--ease-in-out-quart) infinite alternate;
+}
+
+.guitarSvg {
+  width: 100%;
+  height: 100%;
+  filter: drop-shadow(0 30px 40px rgb(80 30 0 / 0.28));
+}
+
+.notes {
+  position: absolute;
+  top: 50%;
+  left: 52%;
+  width: 40%;
+  height: 40%;
+  pointer-events: none;
+}
+
+.chip {
+  position: absolute;
+  z-index: 2;
+  animation: bob 6s var(--ease-in-out-quart) infinite alternate;
+}
+
+.chipPiano {
+  top: 7%;
+  left: 5%;
+}
+
+.chipHarmonium {
+  top: 34%;
+  right: 4%;
+  animation-delay: -2s;
+}
+
+.chipVocal {
+  bottom: 30%;
+  left: 4%;
+  animation-delay: -4s;
+}
+
+.nowPlaying {
+  position: absolute;
+  right: 4%;
+  bottom: 5%;
+  z-index: 2;
+  width: min(17rem, 56%);
+  padding: 0.9rem 1rem 1rem;
+  border-radius: 1.1rem;
+  border: 1px solid var(--color-line);
+  background-color: color-mix(in srgb, var(--color-card) 88%, transparent);
+  -webkit-backdrop-filter: blur(14px);
+  backdrop-filter: blur(14px);
+  box-shadow: var(--shadow-float);
+}
+
+@keyframes sway {
+  from {
+    transform: rotate(-26deg);
+  }
+  to {
+    transform: rotate(-20deg);
+  }
+}
+
+@keyframes bob {
+  from {
+    transform: translateY(-6px);
+  }
+  to {
+    transform: translateY(6px);
+  }
+}
+
+@keyframes ring {
+  0% {
+    opacity: 0.7;
+    transform: scale(0.35);
+  }
+  70%,
+  100% {
+    opacity: 0;
+    transform: scale(1.6);
+  }
+}
+
+@media (max-width: 39.99rem) {
+  .chipHarmonium {
+    top: 40%;
+  }
+
+  .chipVocal {
+    display: none;
+  }
+
+  .nowPlaying {
+    width: 62%;
+    padding: 0.7rem 0.8rem 0.8rem;
+  }
+}

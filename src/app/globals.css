@@ -9,33 +9,33 @@
   color-scheme: light;
 }
 
-@media (max-width: 63.99rem) {
-  :root {
-    --spacing-header: 4rem;
-  }
-}
-
 .dark {
   color-scheme: dark;
-  --color-paper: #0e0e11;
-  --color-surface: #17171b;
-  --color-card: #1c1c21;
-  --color-ink: #f2f1ee;
-  --color-ink-soft: #cfcdc8;
-  --color-muted: #9a9893;
-  --color-line: rgb(255 255 255 / 0.1);
-  --color-line-strong: rgb(255 255 255 / 0.18);
-  --color-accent: #d9480f;
-  --color-accent-hover: #ef5a1c;
+  --color-paper: #0a0a0a;
+  --color-surface: #131313;
+  --color-card: #171717;
+  --color-ink: #f5f5f5;
+  --color-ink-soft: #d4d4d4;
+  --color-muted: #a3a3a3;
+  --color-faint: #8a8a8a;
+  --color-line: rgb(255 255 255 / 0.08);
+  --color-line-strong: rgb(255 255 255 / 0.16);
+  --color-accent: #f26a1f;
+  --color-accent-hover: #ff7a3d;
   --color-accent-text: #ff8a50;
-  --color-accent-soft: #3a1a0c;
-  --color-stage: #07070a;
-  --color-stage-soft: #121218;
+  --color-accent-soft: #2a160b;
+  --color-cta: #fafafa;
+  --color-cta-hover: #e5e5e5;
+  --color-cta-fg: #0a0a0a;
+  --color-stage: #050505;
+  --color-stage-soft: #121212;
+  --shadow-card: 0 1px 2px rgb(0 0 0 / 0.4), 0 8px 24px -12px rgb(0 0 0 / 0.6);
+  --shadow-float: 0 1px 2px rgb(0 0 0 / 0.4), 0 24px 48px -20px rgb(0 0 0 / 0.75);
 }
 
 @theme inline {
-  --font-display: var(--font-instrument-serif), "Iowan Old Style", Georgia, serif;
-  --font-sans: var(--font-geist), -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+  --font-display: var(--font-inter), ui-sans-serif, system-ui, -apple-system, sans-serif;
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, -apple-system, sans-serif;
   --font-mono: ui-monospace, "SF Mono", Menlo, monospace;
 }
 
@@ -49,34 +49,34 @@
     -webkit-text-size-adjust: 100%;
     text-size-adjust: 100%;
     -webkit-tap-highlight-color: transparent;
+    scroll-padding-top: 5rem;
+    scrollbar-width: thin;
+    scrollbar-color: var(--color-line-strong) transparent;
   }
 
   body {
     font-family: var(--font-sans);
     font-size: 1rem;
     line-height: 1.6;
-    letter-spacing: -0.006em;
+    letter-spacing: -0.011em;
     color: var(--color-ink);
     background: var(--color-paper);
     overflow-x: clip;
-    transition:
-      background-color 0.3s ease,
-      color 0.3s ease;
   }
 
   h1,
   h2,
   h3 {
     font-family: var(--font-display);
-    font-weight: 400;
+    font-weight: 600;
     text-wrap: balance;
   }
 
   h1 em,
   h2 em,
   h3 em {
-    font-style: italic;
-    color: var(--color-accent-text);
+    font-style: normal;
+    color: var(--color-faint);
   }
 
   ::selection {
@@ -110,6 +110,30 @@
   input:disabled {
     cursor: not-allowed;
   }
+
+  ::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    border: 3px solid transparent;
+    border-radius: 999px;
+    background-color: var(--color-line-strong);
+    background-clip: padding-box;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background-color: var(--color-faint);
+  }
+
+  ::-webkit-scrollbar-corner {
+    background: transparent;
+  }
 }
 
 @layer utilities {
@@ -117,7 +141,7 @@
     width: 100%;
     margin-inline: auto;
     padding-inline: var(--spacing-gutter);
-    max-width: 82rem;
+    max-width: 80rem;
   }
 
   .eyebrow {
@@ -125,23 +149,35 @@
     font-size: var(--text-eyebrow);
     line-height: var(--text-eyebrow--line-height);
     font-weight: 600;
-    letter-spacing: 0.16em;
-    text-transform: uppercase;
-  }
-
-  .staff-rule {
-    background-image: repeating-linear-gradient(
-      to bottom,
-      var(--color-line-strong) 0,
-      var(--color-line-strong) 1px,
-      transparent 1px,
-      transparent 7px
-    );
-    height: 29px;
+    letter-spacing: -0.005em;
   }
 
   .tabular {
     font-variant-numeric: tabular-nums;
+  }
+
+  .rise {
+    animation: rise 0.8s var(--ease-out-expo) both;
+  }
+
+  .rise-1 {
+    animation-delay: 0.05s;
+  }
+
+  .rise-2 {
+    animation-delay: 0.12s;
+  }
+
+  .rise-3 {
+    animation-delay: 0.2s;
+  }
+
+  .rise-4 {
+    animation-delay: 0.28s;
+  }
+
+  .rise-5 {
+    animation-delay: 0.36s;
   }
 }
 
@@ -150,6 +186,13 @@
 
   &::-webkit-scrollbar {
     display: none;
+  }
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
   }
 }
 

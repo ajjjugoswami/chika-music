@@ -1,18 +1,20 @@
 import Link from "next/link";
-import { CourseMotif } from "@/components/ui/motif/CourseMotif";
+import { AppImage } from "@/components/ui/AppImage";
+import { getImage } from "@/lib/data/images";
 import type { Course } from "@/types/course";
 
 export function CoursesMenuItem({ course }: { course: Course }) {
   return (
-    <Link
-      href={`/courses/${course.slug}`}
-      className="group flex items-center gap-4 rounded-xl p-2 transition-colors hover:bg-surface"
-    >
-      <CourseMotif variant={course.motif} tone={course.tone} className="h-16 w-20 shrink-0 rounded-lg" />
-      <span className="min-w-0">
-        <span className="block font-display text-[1.375rem] leading-tight">{course.name}</span>
-        <span className="mt-0.5 block truncate text-[13px] text-muted">{course.styles.slice(0, 3).join(" · ")}</span>
-      </span>
+    <Link href={`/courses/${course.slug}`} className="group block">
+      <div className="relative aspect-4/3 overflow-hidden rounded-xl bg-surface">
+        <AppImage
+          image={getImage(course.heroImageId)}
+          sizes="240px"
+          className="transition-transform duration-700 ease-out-expo group-hover:scale-105"
+        />
+      </div>
+      <p className="mt-3 text-[15px] font-semibold tracking-[-0.01em] group-hover:text-accent-text">{course.name}</p>
+      <p className="mt-0.5 truncate text-[13px] text-muted">{course.styles.slice(0, 3).join(" · ")}</p>
     </Link>
   );
 }

@@ -11,20 +11,20 @@ export function CourseShowcase() {
         label="Courses"
         title={
           <>
-            Four instruments. <em>One</em> place to grow.
+            Four instruments. <em>One place to grow.</em>
           </>
         }
         description="Every course runs from complete beginner to advanced, with lessons shaped around your goals."
         action={
-          <ButtonLink href="/courses" variant="outline">
+          <ButtonLink href="/courses" variant="outline" size="md">
             Compare courses
           </ButtonLink>
         }
       />
-      <Reveal stagger className="mt-14 grid gap-x-5 gap-y-12 sm:grid-cols-2 lg:grid-cols-4">
-        {getAllCourses().map((course, index) => (
+      <Reveal stagger className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+        {getAllCourses().map((course) => (
           <RevealItem key={course.slug}>
-            <CourseCard course={course} index={index} />
+            <CourseCard course={course} imageClassName="aspect-4/5" />
           </RevealItem>
         ))}
       </Reveal>

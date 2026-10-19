@@ -1,0 +1,51 @@
+.wrap {
+  position: relative;
+}
+
+.note {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  color: var(--color-accent);
+  opacity: 0;
+  animation: float-note 5.4s var(--ease-out-expo) infinite;
+}
+
+.glyph {
+  width: 1.75rem;
+  height: 1.75rem;
+}
+
+.note:nth-child(2) {
+  left: 30%;
+  color: var(--color-ink);
+  animation-delay: 1.35s;
+}
+
+.note:nth-child(3) {
+  left: 55%;
+  animation-delay: 2.7s;
+}
+
+.note:nth-child(4) {
+  left: 15%;
+  color: var(--color-ink);
+  animation-delay: 4.05s;
+}
+
+@keyframes float-note {
+  0% {
+    opacity: 0;
+    transform: translate(0, 0) rotate(-10deg) scale(0.7);
+  }
+  15% {
+    opacity: 0.9;
+  }
+  70% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+    transform: translate(3.5rem, -11rem) rotate(14deg) scale(1.1);
+  }
+}

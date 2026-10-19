@@ -7,14 +7,14 @@
   color: var(--color-ink);
   background-color: var(--color-paper);
   transition:
-    background-color 0.4s var(--ease-out-expo),
-    box-shadow 0.4s var(--ease-out-expo);
+    background-color 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
 .header[data-scrolled] {
-  background-color: color-mix(in srgb, var(--color-paper) 84%, transparent);
-  -webkit-backdrop-filter: saturate(160%) blur(18px);
-  backdrop-filter: saturate(160%) blur(18px);
+  background-color: color-mix(in srgb, var(--color-paper) 78%, transparent);
+  -webkit-backdrop-filter: saturate(180%) blur(18px);
+  backdrop-filter: saturate(180%) blur(18px);
   box-shadow: inset 0 -1px 0 var(--color-line);
 }
 
@@ -22,45 +22,33 @@
   background-color: var(--color-paper);
   -webkit-backdrop-filter: none;
   backdrop-filter: none;
+  box-shadow: none;
 }
 
 .navLink {
-  position: relative;
   display: inline-flex;
   align-items: center;
-  gap: 0.35rem;
-  padding: 0.5rem 0.95rem;
-  font-size: 14.5px;
+  gap: 0.3rem;
+  align-self: center;
+  height: 2rem;
+  padding-inline: 0.85rem;
+  border-radius: 999px;
+  font-size: 13.5px;
   font-weight: 500;
   white-space: nowrap;
-  color: var(--color-ink-soft);
-  transition: color 0.25s ease;
+  color: var(--color-ink);
+  transition:
+    color 0.2s ease,
+    background-color 0.2s ease;
 }
 
 .navLink:hover,
-.navLink[aria-current="page"],
 .navLink[aria-expanded="true"] {
-  color: var(--color-ink);
+  background-color: var(--color-surface);
 }
 
-.navLink::after {
-  content: "";
-  position: absolute;
-  left: 0.95rem;
-  right: 0.95rem;
-  bottom: 0.2rem;
-  height: 1.5px;
-  border-radius: 2px;
-  background: var(--color-accent);
-  transform: scaleX(0);
-  transform-origin: right;
-  transition: transform 0.5s var(--ease-out-expo);
-}
-
-.navLink:hover::after,
-.navLink[aria-current="page"]::after {
-  transform: scaleX(1);
-  transform-origin: left;
+.navLink[aria-current="page"] {
+  color: var(--color-accent-text);
 }
 
 .iconButton {
@@ -70,28 +58,52 @@
 .cta {
   display: inline-flex;
   align-items: center;
-  height: 2.375rem;
-  padding-inline: 1rem;
+  gap: 0.35rem;
+  height: 2.125rem;
+  padding-inline: 0.95rem;
   border-radius: 999px;
-  font-size: 13.5px;
-  font-weight: 500;
+  font-size: 13px;
+  font-weight: 600;
   white-space: nowrap;
-  color: #ffffff;
-  background-color: var(--color-accent);
-  transition: background-color 0.3s ease;
+  color: var(--color-cta-fg);
+  background-color: var(--color-cta);
+  transition: background-color 0.2s ease;
 }
 
 .cta:hover {
-  background-color: var(--color-accent-hover);
+  background-color: var(--color-cta-hover);
+}
+
+.cta svg {
+  width: 0.8rem;
+  height: 0.8rem;
+}
+
+.panel {
+  position: absolute;
+  inset-inline: 0;
+  top: 100%;
+  z-index: 50;
+  background-color: var(--color-paper);
+  box-shadow:
+    inset 0 1px 0 var(--color-line),
+    0 30px 60px -30px rgb(0 0 0 / 0.25);
+  clip-path: inset(0 0 100% 0);
+  visibility: hidden;
+  transition:
+    clip-path 0.36s var(--ease-out-expo),
+    visibility 0s linear 0.36s;
+}
+
+.panel[data-open] {
+  clip-path: inset(0 0 -60px 0);
+  visibility: visible;
+  transition:
+    clip-path 0.42s var(--ease-out-expo),
+    visibility 0s;
 }
 
 @media (min-width: 40rem) {
-  .cta {
-    height: 2.75rem;
-    padding-inline: 1.4rem;
-    font-size: 14.5px;
-  }
-
   .iconButton {
     display: grid;
   }

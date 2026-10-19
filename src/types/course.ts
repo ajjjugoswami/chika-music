@@ -3,8 +3,6 @@ import type { Faq } from "./site";
 export type CourseCategory = "instruments" | "vocals";
 export type Level = "beginner" | "intermediate" | "advanced";
 export type ClassMode = "studio" | "online";
-export type CourseMotifVariant = "strings" | "keys" | "reeds" | "wave";
-export type CourseTone = "walnut" | "stage" | "rosewood" | "midnight";
 
 export interface CourseLevel {
   level: Level;
@@ -25,6 +23,6 @@ export interface Course {
   forWho: string[];
   formats: string[];
   faqs: Faq[];
-  motif: CourseMotifVariant;
-  tone: CourseTone;
+  heroImageId: string;
+  galleryImageIds: string[];
 }

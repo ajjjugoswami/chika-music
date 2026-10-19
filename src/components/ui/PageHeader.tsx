@@ -1,6 +1,6 @@
 import type { ReactNode } from "react";
-import { Reveal } from "@/components/motion/Reveal";
 import { cn } from "@/lib/utils/cn";
+import { Eyebrow } from "./Eyebrow";
 
 interface PageHeaderProps {
   eyebrow: string;
@@ -12,14 +12,13 @@ interface PageHeaderProps {
 
 export function PageHeader({ eyebrow, title, description, children, className }: PageHeaderProps) {
   return (
-    <header className={cn("container-x pt-16 pb-14 md:pt-24 md:pb-20", className)}>
-      <Reveal onLoad className="max-w-4xl">
-        <p className="eyebrow text-accent-text">{eyebrow}</p>
-        <h1 className="mt-5 text-display-xl">{title}</h1>
-        {description && <p className="mt-6 max-w-2xl text-lead text-muted">{description}</p>}
-        {children && <div className="mt-9">{children}</div>}
-      </Reveal>
-      <div aria-hidden className="staff-rule mt-14 md:mt-20" />
+    <header className={cn("container-x pt-14 pb-14 md:pt-20 md:pb-16", className)}>
+      <div className="max-w-3xl">
+        <Eyebrow className="rise rise-1">{eyebrow}</Eyebrow>
+        <h1 className="rise rise-2 mt-5 text-display-xl">{title}</h1>
+        {description && <p className="rise rise-3 mt-5 max-w-2xl text-lead text-muted">{description}</p>}
+        {children && <div className="rise rise-4 mt-8">{children}</div>}
+      </div>
     </header>
   );
 }

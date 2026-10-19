@@ -13,19 +13,29 @@ export function HighlightGrid({ items, numbered = false, tone = "default", class
   const light = tone === "light";
 
   return (
-    <Reveal stagger className={cn("grid gap-px sm:grid-cols-2 lg:grid-cols-4", className)}>
+    <Reveal stagger className={cn("grid gap-3 sm:grid-cols-2 lg:grid-cols-4", className)}>
       {items.map((item, index) => (
         <RevealItem
           key={item.title}
-          className={cn("border-t pt-6 pr-6 pb-8", light ? "border-line-light" : "border-line-strong")}
+          className={cn(
+            "flex flex-col rounded-card p-6 md:p-7",
+            light ? "bg-white/5 ring-1 ring-white/10 ring-inset" : "border border-line bg-card shadow-card",
+          )}
         >
           {numbered && (
-            <span className={cn("tabular text-[13px] font-medium", light ? "text-accent-bright" : "text-accent-text")}>
-              0{index + 1}
+            <span
+              className={cn(
+                "tabular grid size-8 place-items-center rounded-full text-[13px] font-semibold",
+                light ? "bg-white/10 text-white" : "bg-accent-soft text-accent-text",
+              )}
+            >
+              {index + 1}
             </span>
           )}
-          <h3 className={cn("text-[1.875rem] leading-tight", numbered && "mt-3")}>{item.title}</h3>
-          <p className={cn("mt-3 text-[15.5px] leading-relaxed", light ? "text-white/65" : "text-muted")}>
+          <h3 className={cn("text-[1.1875rem] tracking-[-0.02em]", numbered && "mt-5", light && "text-white")}>
+            {item.title}
+          </h3>
+          <p className={cn("mt-2 text-[15px] leading-relaxed", light ? "text-white/60" : "text-muted")}>
             {item.description}
           </p>
         </RevealItem>

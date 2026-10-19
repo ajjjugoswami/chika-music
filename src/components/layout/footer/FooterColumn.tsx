@@ -4,11 +4,11 @@ import type { NavItem } from "@/types/site";
 export function FooterColumn({ title, links }: { title: string; links: NavItem[] }) {
   return (
     <div>
-      <p className="eyebrow text-muted">{title}</p>
-      <ul className="mt-5 space-y-2.5 text-[15px]">
+      <h2 className="text-[13px] font-semibold">{title}</h2>
+      <ul className="mt-4 space-y-2.5">
         {links.map((link) => (
           <li key={link.href}>
-            <Link href={link.href} className="transition-colors hover:text-accent-text">
+            <Link href={link.href} className="text-[13.5px] text-muted transition-colors hover:text-ink">
               {link.label}
             </Link>
           </li>

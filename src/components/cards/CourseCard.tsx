@@ -1,37 +1,51 @@
 import { ArrowUpRight } from "lucide-react";
 import Link from "next/link";
-import { CourseMotif } from "@/components/ui/motif/CourseMotif";
+import { AppImage } from "@/components/ui/AppImage";
 import { formatModes } from "@/lib/data/courses";
+import { getImage } from "@/lib/data/images";
 import { cn } from "@/lib/utils/cn";
 import type { Course } from "@/types/course";
 
 interface CourseCardProps {
   course: Course;
-  index?: number;
   className?: string;
+  imageClassName?: string;
+  sizes?: string;
 }
 
-export function CourseCard({ course, index, className }: CourseCardProps) {
+export function CourseCard({
+  course,
+  className,
+  imageClassName = "aspect-4/3",
+  sizes = "(min-width: 1024px) 25vw, (min-width: 640px) 50vw, 100vw",
+}: CourseCardProps) {
   return (
-    <Link href={`/courses/${course.slug}`} className={cn("group block", className)}>
-      <CourseMotif variant={course.motif} tone={course.tone} className="aspect-[4/3.4]">
-        <div className="flex h-full flex-col justify-between p-6 md:p-7">
-          <div className="flex items-start justify-between">
-            {index !== undefined && (
-              <span className="tabular text-[13px] font-medium text-white/60">0{index + 1}</span>
-            )}
-            <span className="ml-auto grid size-10 place-items-center rounded-full bg-white/10 ring-1 ring-white/20 backdrop-blur transition-colors duration-300 group-hover:bg-white group-hover:text-stage">
-              <ArrowUpRight className="size-4" aria-hidden />
-            </span>
-          </div>
-          <h3 className="text-[clamp(2.5rem,4vw,3.5rem)] leading-none">{course.name}</h3>
+    <Link
+      href={`/courses/${course.slug}`}
+      className={cn(
+        "group flex h-full flex-col overflow-hidden rounded-card border border-line bg-card shadow-card transition-shadow duration-300 hover:shadow-float",
+        className,
+      )}
+    >
+      <div className={cn("relative overflow-hidden bg-surface", imageClassName)}>
+        <AppImage
+          image={getImage(course.heroImageId)}
+          sizes={sizes}
+          className="transition-transform duration-700 ease-out-expo group-hover:scale-105"
+        />
+        <span className="absolute top-3 left-3 rounded-full bg-black/45 px-2.5 py-1 text-[12px] font-medium text-white backdrop-blur-md">
+          Ages {course.minAge}+
+        </span>
+      </div>
+      <div className="flex flex-1 flex-col p-5">
+        <div className="flex items-center justify-between gap-3">
+          <h3 className="text-[1.25rem] tracking-[-0.025em]">{course.name}</h3>
+          <span className="grid size-8 place-items-center rounded-full bg-surface transition-colors duration-300 group-hover:bg-cta group-hover:text-cta-fg">
+            <ArrowUpRight className="size-4" aria-hidden />
+          </span>
         </div>
-      </CourseMotif>
-      <div className="mt-5 px-1">
-        <p className="text-[16px] leading-snug text-ink">{course.tagline}</p>
-        <p className="mt-2 text-[13.5px] text-muted">
-          Ages {course.minAge}+ · {formatModes(course.modes)}
-        </p>
+        <p className="mt-2 text-[14.5px] leading-relaxed text-muted">{course.tagline}</p>
+        <p className="mt-auto pt-4 text-[12.5px] font-medium text-faint">{formatModes(course.modes)}</p>
       </div>
     </Link>
   );

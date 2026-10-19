@@ -1,15 +1,18 @@
+import type { ReactNode } from "react";
+import { cn } from "@/lib/utils/cn";
+
 interface CourseFact {
   label: string;
-  value: string;
+  value: ReactNode;
 }
 
-export function CourseFacts({ facts }: { facts: CourseFact[] }) {
+export function CourseFacts({ facts, className }: { facts: CourseFact[]; className?: string }) {
   return (
-    <dl className="mt-4 grid grid-cols-3 divide-x divide-line rounded-2xl border border-line bg-card">
+    <dl className={cn("grid grid-cols-3 divide-x divide-line rounded-card border border-line bg-surface", className)}>
       {facts.map((fact) => (
-        <div key={fact.label} className="px-4 py-4 sm:px-5">
-          <dt className="text-[12px] font-medium tracking-[0.12em] text-muted uppercase">{fact.label}</dt>
-          <dd className="mt-1 text-[15px] font-medium sm:text-[16px]">{fact.value}</dd>
+        <div key={fact.label} className="px-4 py-3.5 sm:px-5">
+          <dt className="text-[12px] text-muted">{fact.label}</dt>
+          <dd className="mt-0.5 text-[13.5px] font-semibold tracking-[-0.01em] sm:text-[14.5px]">{fact.value}</dd>
         </div>
       ))}
     </dl>

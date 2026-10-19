@@ -1,0 +1,116 @@
+.keys {
+  position: relative;
+  height: 2.75rem;
+}
+
+.white {
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  gap: 2px;
+  height: 100%;
+}
+
+.whiteKey {
+  position: relative;
+  overflow: hidden;
+  border-radius: 0 0 4px 4px;
+  background-color: #ffffff;
+  box-shadow: inset 0 0 0 1px rgb(0 0 0 / 0.12);
+}
+
+.whiteKey::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, transparent 20%, var(--color-accent));
+  opacity: 0;
+  animation: press 4s var(--ease-in-out-quart) infinite;
+}
+
+.whiteKey:nth-child(1)::after {
+  animation-delay: 0s;
+}
+
+.whiteKey:nth-child(2)::after {
+  animation-delay: 0.4s;
+}
+
+.whiteKey:nth-child(3)::after {
+  animation-delay: 0.8s;
+}
+
+.whiteKey:nth-child(5)::after {
+  animation-delay: 1.2s;
+}
+
+.whiteKey:nth-child(6)::after {
+  animation-delay: 1.6s;
+}
+
+.whiteKey:nth-child(8)::after {
+  animation-delay: 2s;
+}
+
+.whiteKey:nth-child(4)::after,
+.whiteKey:nth-child(7)::after,
+.whiteKey:nth-child(9)::after,
+.whiteKey:nth-child(10)::after {
+  animation: none;
+}
+
+.black {
+  position: absolute;
+  inset: 0 0 auto;
+  display: grid;
+  grid-template-columns: repeat(20, 1fr);
+  height: 58%;
+  pointer-events: none;
+}
+
+.blackKey {
+  grid-row: 1;
+  margin-inline: 20%;
+  border-radius: 0 0 3px 3px;
+  background-color: #171717;
+}
+
+.blackKey:nth-child(1) {
+  grid-column: 2 / span 2;
+}
+
+.blackKey:nth-child(2) {
+  grid-column: 4 / span 2;
+}
+
+.blackKey:nth-child(3) {
+  grid-column: 8 / span 2;
+}
+
+.blackKey:nth-child(4) {
+  grid-column: 10 / span 2;
+}
+
+.blackKey:nth-child(5) {
+  grid-column: 12 / span 2;
+}
+
+.blackKey:nth-child(6) {
+  grid-column: 16 / span 2;
+}
+
+.blackKey:nth-child(7) {
+  grid-column: 18 / span 2;
+}
+
+@keyframes press {
+  0%,
+  100% {
+    opacity: 0;
+  }
+  8% {
+    opacity: 0.85;
+  }
+  22% {
+    opacity: 0;
+  }
+}
