@@ -5,7 +5,7 @@ import { AppImage } from "@/components/ui/AppImage";
 import { Eyebrow } from "@/components/ui/Eyebrow";
 import { siteConfig } from "@/content/site";
 import { getImage } from "@/lib/data/images";
-import { getInitials } from "@/lib/utils/format";
+import { FounderAvatar } from "@/components/ui/FounderAvatar";
 
 export function AboutStory() {
   const { founder, address, name } = siteConfig;
@@ -17,9 +17,7 @@ export function AboutStory() {
           <AppImage image={getImage("academy-perform")} sizes="(min-width: 1024px) 45vw, 100vw" />
         </Parallax>
         <div className="absolute inset-x-4 bottom-4 flex items-center gap-3 rounded-2xl bg-card/90 p-3 shadow-float backdrop-blur-md">
-          <span className="grid size-11 place-items-center rounded-full bg-accent text-[14px] font-semibold text-white">
-            {getInitials(founder)}
-          </span>
+          <FounderAvatar className="size-12" />
           <div>
             <p className="text-[15px] font-semibold">{founder}</p>
             <p className="text-[13px] text-muted">Founder & teacher</p>

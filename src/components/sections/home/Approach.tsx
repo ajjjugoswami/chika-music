@@ -8,12 +8,12 @@ import { SectionIntro } from "@/components/ui/SectionIntro";
 import { academyValues } from "@/content/academy";
 import { siteConfig } from "@/content/site";
 import { getImage } from "@/lib/data/images";
-import { getInitials } from "@/lib/utils/format";
+import { FounderAvatar } from "@/components/ui/FounderAvatar";
 
 export function Approach() {
   return (
     <section className="container-x">
-      <div className="overflow-hidden rounded-panel bg-stage p-6 sm:p-10 lg:p-14">
+      <div className="overflow-hidden rounded-panel bg-stage p-5 sm:p-10 lg:p-14">
         <div className="grid gap-10 lg:grid-cols-[1.2fr_1fr] lg:items-end">
           <SectionIntro
             tone="light"
@@ -35,9 +35,7 @@ export function Approach() {
 
         <Reveal className="mt-10 flex flex-col gap-6 border-t border-line-light pt-8 sm:flex-row sm:items-center sm:justify-between">
           <div className="flex items-center gap-4">
-            <span className="grid size-12 place-items-center rounded-full bg-accent text-[15px] font-semibold text-white">
-              {getInitials(siteConfig.founder)}
-            </span>
+            <FounderAvatar className="size-13" />
             <div>
               <p className="text-[15px] font-semibold text-white">{siteConfig.founder}</p>
               <p className="text-[13.5px] text-white/55">Founder & teacher, {siteConfig.name}</p>

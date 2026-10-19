@@ -2,7 +2,7 @@ import { MapPin, Phone } from "lucide-react";
 import { FaInstagram, FaWhatsapp } from "react-icons/fa6";
 import { Reveal } from "@/components/motion/Reveal";
 import { siteConfig } from "@/content/site";
-import { getInitials } from "@/lib/utils/format";
+import { FounderAvatar } from "@/components/ui/FounderAvatar";
 import { mapDirectionsUrl } from "@/lib/utils/maps";
 import { buildWhatsAppLink } from "@/lib/utils/whatsapp";
 import { ContactRow } from "./ContactRow";
@@ -52,9 +52,7 @@ export function ContactPanel() {
       <HoursList className="mt-8" />
 
       <div className="mt-auto flex items-center gap-3 border-t border-line-light pt-6">
-        <span className="grid size-11 place-items-center rounded-full bg-accent text-[14px] font-semibold">
-          {getInitials(founder)}
-        </span>
+        <FounderAvatar />
         <div>
           <p className="text-[15px] font-semibold">{founder}</p>
           <p className="text-[13px] text-white/55">Founder & teacher</p>

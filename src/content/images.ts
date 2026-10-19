@@ -14,6 +14,7 @@ export const imageAlts: Record<string, string> = {
   "vocal-01": "Young boy singing enthusiastically into a studio microphone",
   "vocal-02": "Gold vocal microphone on a stand",
   "academy-perform": "Two musicians playing guitars at sunset",
+  founder: "Chika Gochwal, founder of Future Music Academy",
 };
 
 export const imageCredits: ImageCredit[] = [

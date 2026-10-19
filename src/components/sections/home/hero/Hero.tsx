@@ -32,7 +32,7 @@ export function Hero() {
             <span className="font-medium text-ink">{siteConfig.founder}</span> in {address.city}.
           </p>
 
-          <div className="rise rise-4 mt-9 flex flex-wrap items-center justify-center gap-2.5 lg:justify-start">
+          <div className="rise rise-4 mt-8 grid w-full grid-cols-2 gap-2 sm:mt-9 sm:flex sm:w-auto sm:flex-wrap sm:items-center sm:justify-center sm:gap-2.5 lg:justify-start">
             <ButtonLink href="/book-trial">Book a trial class</ButtonLink>
             <ButtonLink
               href={buildWhatsAppLink()}

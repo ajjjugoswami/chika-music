@@ -12,4 +12,5 @@ export const imageManifest = [
   { id: "vocal-01", file: "v5.jpg", out: "courses/vocal/01.webp" },
   { id: "vocal-02", file: "v4.jpg", out: "courses/vocal/02.webp" },
   { id: "academy-perform", file: "m2.jpg", out: "academy/perform.webp" },
+  { id: "founder", file: "founder.png", out: "academy/founder.webp" },
 ];

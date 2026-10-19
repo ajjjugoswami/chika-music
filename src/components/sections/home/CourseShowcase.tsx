@@ -21,10 +21,15 @@ export function CourseShowcase() {
           </ButtonLink>
         }
       />
-      <Reveal stagger className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+      <Reveal stagger className="mt-10 grid grid-cols-2 gap-3 sm:mt-12 sm:gap-4 lg:grid-cols-4">
         {getAllCourses().map((course) => (
           <RevealItem key={course.slug}>
-            <CourseCard course={course} imageClassName="aspect-4/5" />
+            <CourseCard
+              course={course}
+              compact
+              imageClassName="aspect-square sm:aspect-4/5"
+              sizes="(min-width: 1024px) 25vw, 50vw"
+            />
           </RevealItem>
         ))}
       </Reveal>

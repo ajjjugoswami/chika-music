@@ -76,5 +76,11 @@
     "width": 960,
     "height": 640,
     "blurDataURL": "data:image/webp;base64,UklGRmAAAABXRUJQVlA4IFQAAADwAQCdASoQAAsAA4BaJbACdAEQXLSMzIAA/tbaPBkcfe40QUN76ttJ2co8d9bC9SpKotPBJ/vxYYgSD6xP/ts/+HiU0ff7NDPZvhe7QFDP2FpAAAA="
+  },
+  "founder": {
+    "src": "/images/academy/founder.webp",
+    "width": 250,
+    "height": 250,
+    "blurDataURL": "data:image/webp;base64,UklGRnoAAABXRUJQVlA4IG4AAAAQAgCdASoQABAAA4BaJagCdAEQZ6sz+kHAAP63Ip9BsfMZ6MPs6jNmH8id6agTRztXfBdYBASdj0mvnlleH729As+Do0ayLUDFJeUO1h8GqTExX8xT6oERr/zPy0mUbYgw6XmF0td9ZLN/0CwAAA=="
   }
 }

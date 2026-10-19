@@ -6,7 +6,7 @@ import { Header } from "@/components/layout/header/Header";
 import { MobileActionBar } from "@/components/layout/MobileActionBar";
 import { MotionProvider } from "@/components/layout/MotionProvider";
 import { ThemeProvider } from "@/components/layout/ThemeProvider";
-import { WhatsAppFloat } from "@/components/layout/WhatsAppFloat";
+import { SocialFloat } from "@/components/layout/SocialFloat";
 import { JsonLd } from "@/components/ui/JsonLd";
 import { siteConfig } from "@/content/site";
 import { musicSchoolSchema } from "@/lib/seo/jsonLd";
@@ -92,7 +92,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
             <Header />
             <main id="main">{children}</main>
             <Footer />
-            <WhatsAppFloat />
+            <SocialFloat />
             <MobileActionBar />
           </MotionProvider>
         </ThemeProvider>
