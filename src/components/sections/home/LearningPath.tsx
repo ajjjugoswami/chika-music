@@ -1,7 +1,6 @@
-import { DrawLine } from "@/components/motion/DrawLine";
-import { HighlightGrid } from "@/components/ui/HighlightGrid";
 import { SectionIntro } from "@/components/ui/SectionIntro";
 import { learningPath } from "@/content/academy";
+import { StepTimeline } from "./timeline/StepTimeline";
 
 export function LearningPath() {
   return (
@@ -14,8 +13,7 @@ export function LearningPath() {
           </>
         }
       />
-      <DrawLine className="mt-12 hidden lg:block" />
-      <HighlightGrid items={learningPath} numbered className="mt-12 lg:mt-6" />
+      <StepTimeline steps={learningPath} className="mt-10 sm:mt-14" />
     </section>
   );
 }

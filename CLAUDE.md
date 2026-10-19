@@ -49,7 +49,7 @@ npm run lint     # lint
 7. Content (courses, faculty, fees, testimonials, events, copy) lives in `src/content` as typed data — never hard-coded inside components.
 8. Every animation respects `prefers-reduced-motion` (`MotionConfig reducedMotion="user"` in `MotionProvider`).
 9. Animate only `transform`, `opacity`, `clip-path` and `filter`. Never animate layout properties.
-10. No scroll-jacking, pinned sections, smooth-scroll overrides, preloaders, custom cursors or autoplaying audio. Native scrolling only.
+10. No scroll-jacking, pinned sections, smooth-scroll overrides, preloaders or custom cursors. Native scrolling only. The only audio that starts by itself is the ambient tanpura (`hooks/useAmbientAudio`): very low volume, fades in on the first click/tap, has a header mute toggle that is remembered, and pauses when a practice tool plays.
 11. Text never sits directly on a busy photo. Use solid backgrounds or strong gradients.
 12. Accessibility is part of done: semantic HTML, keyboard navigation, visible focus rings, alt text, AA contrast.
 
@@ -83,6 +83,8 @@ Editorial and warm, distinct from a generic "tutor" site. Think concert programm
 
 ## 5. Courses
 
+**All classes are in person at the academy in Model Town, Rohtak. There are no online classes — do not add online options, labels or FAQs.**
+
 **Scope is exactly these 4 courses (set by the owner). Do not add other instruments.** Each course has levels **Beginner → Intermediate → Advanced**. Ages, styles and exam tracks below are assumptions; confirm with the owner.
 
 | Course | Slug | Category | Age | Styles |
@@ -92,13 +94,12 @@ Editorial and warm, distinct from a generic "tutor" site. Think concert programm
 | Harmonium | `harmonium` | Instruments | 7+ | Hindustani, bhajan, ghazal accompaniment |
 | Vocal | `vocal` | Vocals | 6+ | Hindustani classical, light/Bollywood, devotional |
 
-Each course page shows: overview, who it's for, what you'll learn (per level), class format (1:1 / group, duration, frequency), mode (studio / online), fees from, faculty teaching it, FAQs, student results/videos, and a trial-class CTA.
+Each course page shows: overview, who it's for, what you'll learn (per level), class format (1:1 / group, duration, frequency), fees from, faculty teaching it, FAQs, student results/videos, and a trial-class CTA.
 
 ### Programmes (dummy, confirm with owner)
 - **Kids Batch** — foundation classes for young beginners.
 - **Exam Prep** — graded exam coaching (board to confirm).
 - **Adult Beginners** — weekend and evening batches.
-- **Online Classes** — live 1:1 over video.
 
 ---
 
@@ -135,7 +136,7 @@ Everything else (fees, faculty, testimonials, events, blog) is dummy content in 
 /                       Home
 /courses                All courses (filter: category, age, mode)
 /courses/[slug]         Course detail
-/programmes/[slug]      Little Maestros, Exam Prep, Adult Beginners, Online
+/programmes/[slug]      Kids Batch, Exam Prep, Adult Beginners
 /faculty                Teachers
 /faculty/[slug]         Teacher profile
 /fees                   Fee plans + FAQ
@@ -155,7 +156,7 @@ Everything else (fees, faculty, testimonials, events, blog) is dummy content in 
 2. Trust strip — students taught, years, exam pass rate, faculty count
 3. Courses — four large cards: Guitar, Piano, Harmonium, Vocal
 4. Our method — 3–4 step learning path (Trial → Plan → Learn → Perform)
-5. Programmes — Little Maestros, Exam Prep, Adults, Online
+5. Programmes — Kids Batch, Exam Prep, Adults
 6. Faculty — teacher cards carousel
 7. Student spotlight — performance videos (click-to-play, no autoplay audio)
 8. Testimonials — parents and students, dark stage section
@@ -217,7 +218,6 @@ scripts/         image optimisation, blur placeholder generation
 ```ts
 type CourseCategory = "instruments" | "vocals";
 type Level = "beginner" | "intermediate" | "advanced";
-type ClassMode = "studio" | "online";
 
 interface Course {
   slug: string;
@@ -226,7 +226,6 @@ interface Course {
   tagline: string;
   description: string;
   minAge: number;
-  modes: ClassMode[];
   levels: { level: Level; outcomes: string[] }[];
   examTracks: string[];
   format: { type: "1:1" | "group"; durationMin: number; perWeek: number }[];
@@ -314,7 +313,7 @@ interface ImageAsset {
 ## 12. Open Questions (confirm with owner)
 
 - Logo, full street address, email, Instagram/YouTube, Google Business Profile link
-- Fees (show publicly or "on request"), batch timings, class duration, online classes offered or not
+- Fees (show publicly or "on request"), batch timings, class duration
 - Chika Gochwal's bio, photo, qualifications; any other teachers
 - Trial-booking backend: Server Action + email, Google Sheet, or DA Forms embed
 - Exam boards actually offered and pass-rate stats

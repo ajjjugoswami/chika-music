@@ -36,11 +36,11 @@ export function courseSchema(course: Course, siteUrl: string) {
     url: `${siteUrl}/courses/${course.slug}`,
     provider: { "@type": "MusicSchool", "@id": `${siteUrl}/#academy`, name: siteConfig.name },
     educationalLevel: "Beginner to Advanced",
-    hasCourseInstance: course.modes.map((mode) => ({
+    hasCourseInstance: {
       "@type": "CourseInstance",
-      courseMode: mode === "online" ? "Online" : "Onsite",
-      location: mode === "online" ? undefined : `${siteConfig.address.locality}, ${siteConfig.address.city}`,
-    })),
+      courseMode: "Onsite",
+      location: `${siteConfig.address.locality}, ${siteConfig.address.city}`,
+    },
   };
 }
 

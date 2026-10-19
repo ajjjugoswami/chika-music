@@ -1,4 +1,4 @@
-import { RotateCcw, Sparkles } from "lucide-react";
+import { CircleCheck, RotateCcw } from "lucide-react";
 import { AppImage } from "@/components/ui/AppImage";
 import { ButtonLink } from "@/components/ui/ButtonLink";
 import { getImage } from "@/lib/data/images";
@@ -17,7 +17,7 @@ export function QuizResult({ course, onRestart }: QuizResultProps) {
       </div>
       <div>
         <p className="inline-flex items-center gap-1.5 text-[13px] font-semibold text-accent-text">
-          <Sparkles className="size-4" aria-hidden />
+          <CircleCheck className="size-4" aria-hidden />
           Your best match
         </p>
         <h3 className="mt-2 text-[1.75rem] leading-tight tracking-[-0.03em]">{course.name}</h3>

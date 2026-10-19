@@ -1,7 +1,7 @@
 import { AboutStory } from "@/components/sections/about/AboutStory";
 import { LearningPath } from "@/components/sections/home/LearningPath";
 import { TrialCta } from "@/components/sections/shared/TrialCta";
-import { HighlightGrid } from "@/components/ui/HighlightGrid";
+import { NumberedList } from "@/components/ui/NumberedList";
 import { PageHeader } from "@/components/ui/PageHeader";
 import { SectionIntro } from "@/components/ui/SectionIntro";
 import { academyValues } from "@/content/academy";
@@ -30,7 +30,7 @@ export default function AboutPage() {
       <section className="border-y border-line bg-surface">
         <div className="container-x py-section">
           <SectionIntro label="What we believe" title="Three things guide every lesson." />
-          <HighlightGrid items={academyValues} numbered className="mt-14 lg:grid-cols-3" />
+          <NumberedList items={academyValues} columns={3} className="mt-10 sm:mt-12" />
         </div>
       </section>
       <LearningPath />

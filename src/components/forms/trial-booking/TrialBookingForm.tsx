@@ -2,14 +2,13 @@
 
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useState } from "react";
-import { useForm } from "react-hook-form";
+import { Controller, useForm } from "react-hook-form";
 import { FaWhatsapp } from "react-icons/fa6";
 import { buttonClassName } from "@/components/ui/ButtonLink";
-import { getAllCourses, MODE_LABELS } from "@/lib/data/courses";
+import { getAllCourses } from "@/lib/data/courses";
 import { buildWhatsAppMessageLink } from "@/lib/utils/whatsapp";
 import {
   AGE_GROUPS,
-  CLASS_MODES,
   TIME_SLOTS,
   trialBookingSchema,
   type TrialBookingInput,
@@ -17,24 +16,26 @@ import {
 import { ChoiceGroup } from "../fields/ChoiceGroup";
 import { FieldShell } from "../fields/FieldShell";
 import { inputClassName, textareaClassName } from "../fields/fieldStyles";
+import { SelectField } from "../fields/SelectField";
 import { buildTrialMessage } from "./trialMessage";
 import { TrialSuccess } from "./TrialSuccess";
 
-const MODE_OPTIONS = CLASS_MODES.map((mode) => ({ value: mode, label: MODE_LABELS[mode] }));
 const SLOT_OPTIONS = TIME_SLOTS.map((slot) => ({ value: slot, label: slot }));
+const AGE_OPTIONS = AGE_GROUPS.map((group) => ({ value: group, label: group }));
 
 export function TrialBookingForm({ defaultCourse }: { defaultCourse?: string }) {
-  const courses = getAllCourses();
+  const courseOptions = getAllCourses().map((course) => ({ value: course.slug, label: course.name }));
   const [sentLink, setSentLink] = useState<string | null>(null);
 
   const {
     register,
+    control,
     handleSubmit,
     reset,
     formState: { errors, isSubmitting },
   } = useForm<TrialBookingInput>({
     resolver: zodResolver(trialBookingSchema),
-    defaultValues: { course: defaultCourse ?? "", mode: "studio", message: "" },
+    defaultValues: { course: defaultCourse ?? "", message: "" },
   });
 
   const onSubmit = (values: TrialBookingInput) => {
@@ -87,48 +88,43 @@ export function TrialBookingForm({ defaultCourse }: { defaultCourse?: string }) 
         </FieldShell>
 
         <FieldShell id="course" label="Course" error={errors.course?.message}>
-          <select
-            id="course"
-            aria-invalid={!!errors.course}
-            aria-describedby={describedBy("course")}
-            className={inputClassName}
-            {...register("course")}
-          >
-            <option value="" disabled>
-              Choose a course
-            </option>
-            {courses.map((course) => (
-              <option key={course.slug} value={course.slug}>
-                {course.name}
-              </option>
-            ))}
-          </select>
+          <Controller
+            control={control}
+            name="course"
+            render={({ field }) => (
+              <SelectField
+                id="course"
+                value={field.value}
+                onChange={field.onChange}
+                onBlur={field.onBlur}
+                options={courseOptions}
+                placeholder="Choose a course"
+                invalid={!!errors.course}
+                describedBy={describedBy("course")}
+              />
+            )}
+          />
         </FieldShell>
 
         <FieldShell id="ageGroup" label="Student age" error={errors.ageGroup?.message}>
-          <select
-            id="ageGroup"
-            defaultValue=""
-            aria-invalid={!!errors.ageGroup}
-            aria-describedby={describedBy("ageGroup")}
-            className={inputClassName}
-            {...register("ageGroup")}
-          >
-            <option value="" disabled>
-              Choose an age group
-            </option>
-            {AGE_GROUPS.map((group) => (
-              <option key={group} value={group}>
-                {group}
-              </option>
-            ))}
-          </select>
+          <Controller
+            control={control}
+            name="ageGroup"
+            render={({ field }) => (
+              <SelectField
+                id="ageGroup"
+                value={field.value ?? ""}
+                onChange={field.onChange}
+                onBlur={field.onBlur}
+                options={AGE_OPTIONS}
+                placeholder="Choose an age group"
+                invalid={!!errors.ageGroup}
+                describedBy={describedBy("ageGroup")}
+              />
+            )}
+          />
         </FieldShell>
       </div>
-
-      <FieldShell id="mode" as="fieldset" label="Where would you like to learn?" error={errors.mode?.message}>
-        <ChoiceGroup name="mode" options={MODE_OPTIONS} registration={register("mode")} />
-      </FieldShell>
 
       <FieldShell id="slot" as="fieldset" label="Preferred time" error={errors.slot?.message}>
         <ChoiceGroup name="slot" options={SLOT_OPTIONS} registration={register("slot")} columns={4} />

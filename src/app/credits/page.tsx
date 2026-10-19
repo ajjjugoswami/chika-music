@@ -1,4 +1,5 @@
 import { PageHeader } from "@/components/ui/PageHeader";
+import { audioCredits } from "@/content/audio";
 import { getImageCredits } from "@/lib/data/images";
 import { buildPageMetadata } from "@/lib/seo/metadata";
 
@@ -45,6 +46,20 @@ export default function CreditsPage() {
             </tbody>
           </table>
         </div>
+
+        <h2 className="mt-14 text-display-md">Music</h2>
+        <ul className="mt-6 divide-y divide-line rounded-card border border-line bg-card text-[14px]">
+          {audioCredits.map((credit) => (
+            <li key={credit.url} className="flex flex-wrap items-center justify-between gap-2 p-4">
+              <a href={credit.url} target="_blank" rel="noopener noreferrer" className="font-medium hover:text-accent-text">
+                {credit.title} — {credit.creator}
+              </a>
+              <span className="text-ink-soft">
+                {credit.source} · {credit.license}
+              </span>
+            </li>
+          ))}
+        </ul>
       </section>
     </>
   );

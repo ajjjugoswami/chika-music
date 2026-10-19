@@ -3,8 +3,9 @@
 import { ChevronDown } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useEffect, useRef, useState } from "react";
+import { useCallback, useRef, useState } from "react";
 import { ArrowNudge } from "@/components/ui/ButtonLink";
+import { useDismiss } from "@/hooks/useDismiss";
 import { getAllCourses } from "@/lib/data/courses";
 import { cn } from "@/lib/utils/cn";
 import { CoursesMenuItem } from "./CoursesMenuItem";
@@ -21,19 +22,8 @@ export function CoursesMenu({ active }: { active: boolean }) {
     setOpen(false);
   }
 
-  useEffect(() => {
-    if (!open) return;
-    const onPointer = (event: PointerEvent) => {
-      if (!rootRef.current?.contains(event.target as Node)) setOpen(false);
-    };
-    const onKey = (event: KeyboardEvent) => event.key === "Escape" && setOpen(false);
-    document.addEventListener("pointerdown", onPointer);
-    window.addEventListener("keydown", onKey);
-    return () => {
-      document.removeEventListener("pointerdown", onPointer);
-      window.removeEventListener("keydown", onKey);
-    };
-  }, [open]);
+  const close = useCallback(() => setOpen(false), []);
+  useDismiss(rootRef, open, close);
 
   const show = () => {
     setOpenedAt(pathname);

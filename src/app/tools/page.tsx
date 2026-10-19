@@ -9,7 +9,7 @@ import { buildPageMetadata } from "@/lib/seo/metadata";
 export const metadata = buildPageMetadata({
   title: "Free Practice Tools — Metronome, Tanpura & Sargam Keyboard",
   description:
-    "Free online metronome, tanpura drone and sargam keyboard for daily riyaz and practice, from Future Music Academy, Rohtak.",
+    "Free in-browser metronome, tanpura drone and sargam keyboard for daily riyaz and practice, from Future Music Academy, Rohtak.",
   path: "/tools",
 });
 

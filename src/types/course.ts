@@ -2,7 +2,6 @@ import type { Faq } from "./site";
 
 export type CourseCategory = "instruments" | "vocals";
 export type Level = "beginner" | "intermediate" | "advanced";
-export type ClassMode = "studio" | "online";
 
 export interface CourseLevel {
   level: Level;
@@ -17,7 +16,6 @@ export interface Course {
   tagline: string;
   description: string;
   minAge: number;
-  modes: ClassMode[];
   styles: string[];
   levels: CourseLevel[];
   forWho: string[];

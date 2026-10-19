@@ -1,5 +1,4 @@
-import { CourseCard } from "@/components/cards/CourseCard";
-import { Reveal, RevealItem } from "@/components/motion/Reveal";
+import { CourseTile } from "@/components/cards/CourseTile";
 import { CourseComparison } from "@/components/sections/courses/CourseComparison";
 import { TrialCta } from "@/components/sections/shared/TrialCta";
 import { PageHeader } from "@/components/ui/PageHeader";
@@ -28,13 +27,19 @@ export default function CoursesPage() {
         description="Four courses, each taught from first lesson to advanced level, with personal attention at every step."
       />
       <section className="container-x pb-section">
-        <Reveal stagger className="grid gap-4 sm:grid-cols-2">
-          {courses.map((course) => (
-            <RevealItem key={course.slug}>
-              <CourseCard course={course} imageClassName="aspect-16/10" sizes="(min-width: 640px) 50vw, 100vw" />
-            </RevealItem>
+        <div className="grid gap-3 sm:grid-cols-2">
+          {courses.map((course, index) => (
+            <CourseTile
+              key={course.slug}
+              course={course}
+              index={index}
+              size="lg"
+              sizes="(min-width: 640px) 50vw, 100vw"
+              delay={(index % 2) * 0.08}
+              className="aspect-4/3 sm:aspect-16/11"
+            />
           ))}
-        </Reveal>
+        </div>
       </section>
       <CourseComparison courses={courses} />
       <TrialCta />

@@ -8,6 +8,7 @@ import { ArrowNudge } from "@/components/ui/ButtonLink";
 import { Logo } from "@/components/ui/Logo";
 import { ThemeToggle } from "@/components/ui/ThemeToggle";
 import { mainNav } from "@/content/site";
+import { AmbientSoundToggle } from "./AmbientSoundToggle";
 import { CoursesMenu } from "./CoursesMenu";
 import styles from "./Header.module.css";
 import { MenuToggle } from "./MenuToggle";
@@ -68,6 +69,7 @@ export function Header() {
           </nav>
 
           <div className="flex flex-1 items-center justify-end gap-1.5">
+            <AmbientSoundToggle />
             <ThemeToggle className={styles.iconButton} />
             <Link href="/book-trial" className={`group ${styles.cta}`}>
               Book a trial

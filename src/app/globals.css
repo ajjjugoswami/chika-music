@@ -141,7 +141,7 @@
     width: 100%;
     margin-inline: auto;
     padding-inline: var(--spacing-gutter);
-    max-width: 80rem;
+    max-width: 90rem;
   }
 
   .eyebrow {

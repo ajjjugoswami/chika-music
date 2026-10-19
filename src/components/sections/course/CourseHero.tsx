@@ -5,7 +5,7 @@ import { RevealImage } from "@/components/motion/RevealImage";
 import { AppImage } from "@/components/ui/AppImage";
 import { ButtonLink } from "@/components/ui/ButtonLink";
 import { LevelRange } from "@/components/ui/LevelRange";
-import { formatModes } from "@/lib/data/courses";
+import { CLASS_LOCATION } from "@/lib/data/courses";
 import { getImage } from "@/lib/data/images";
 import { buildWhatsAppLink } from "@/lib/utils/whatsapp";
 import type { Course } from "@/types/course";
@@ -49,7 +49,7 @@ export function CourseHero({ course }: { course: Course }) {
           facts={[
             { label: "Start from", value: `Age ${course.minAge}` },
             { label: "Levels", value: <LevelRange /> },
-            { label: "Where", value: formatModes(course.modes) },
+            { label: "Where", value: CLASS_LOCATION },
           ]}
         />
       </div>

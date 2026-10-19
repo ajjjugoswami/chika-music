@@ -1,4 +1,4 @@
-import type { Faq, Highlight } from "@/types/site";
+import type { Faq, Highlight, ImageHighlight } from "@/types/site";
 
 export const heroTrustPoints = ["Ages 5 and up", "One-to-one & small batches", "Trial class before you join"];
 
@@ -21,41 +21,51 @@ export const learningPath: Highlight[] = [
   },
 ];
 
-export const learnerGroups: Highlight[] = [
+export const learnerGroups: ImageHighlight[] = [
   {
     title: "Kids",
     description: "Playful, structured lessons that build ear, rhythm and discipline from age five.",
+    imageId: "vocal-01",
   },
   {
     title: "Teens",
     description: "Learn the songs you love, prepare for competitions and school performances.",
+    imageId: "guitar-02",
   },
   {
     title: "Adults",
     description: "It's never too late. Flexible slots for working professionals and beginners.",
+    imageId: "piano-hero",
   },
   {
     title: "Devotional",
     description: "Bhajans, kirtan and classical foundations with harmonium and vocal training.",
+    imageId: "harmonium-01",
   },
 ];
 
-export const learningGoals: Highlight[] = [
+export const learningGoals: ImageHighlight[] = [
   {
     title: "Play your favourite songs",
-    description: "Bollywood, pop and devotional songs arranged for your level.",
+    description:
+      "Bollywood, pop and devotional songs arranged for your level, so you're playing music you love from the first month.",
+    imageId: "guitar-01",
   },
   {
     title: "Stage & competitions",
-    description: "Prepare for school functions, competitions and family events.",
+    description:
+      "Focused preparation for school functions, competitions and family events — repertoire, confidence and stage presence.",
+    imageId: "vocal-01",
   },
   {
     title: "Classical foundations",
-    description: "Sargam, raag, taal and proper technique, step by step.",
+    description: "Sargam, alankars, raag and taal with proper technique, built step by step for lasting skill.",
+    imageId: "harmonium-hero",
   },
   {
     title: "Music as a hobby",
-    description: "Relaxed weekly classes to unwind and enjoy making music.",
+    description: "Relaxed weekly classes to unwind after school or work and simply enjoy making music.",
+    imageId: "piano-01",
   },
 ];
 
@@ -81,7 +91,7 @@ export const feeFactors: Highlight[] = [
   },
   {
     title: "Class format",
-    description: "One-to-one coaching or small-batch classes, at the academy or online.",
+    description: "One-to-one coaching or small-batch classes at the academy.",
   },
   {
     title: "Level",
@@ -109,11 +119,6 @@ export const generalFaqs: Faq[] = [
     question: "Do I need my own instrument?",
     answer:
       "Not for your first classes. For regular practice at home you'll need one, and we'll help you choose the right instrument for your budget.",
-  },
-  {
-    question: "Do you offer online classes?",
-    answer:
-      "Online classes are available for guitar, piano and vocal. Harmonium is taught at the academy in Model Town, Rohtak.",
   },
   {
     question: "Where is the academy?",

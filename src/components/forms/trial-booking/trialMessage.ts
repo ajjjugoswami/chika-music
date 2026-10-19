@@ -1,5 +1,5 @@
 import { siteConfig } from "@/content/site";
-import { getCourse, MODE_LABELS } from "@/lib/data/courses";
+import { getCourse } from "@/lib/data/courses";
 import type { TrialBookingInput } from "@/lib/validation/trialBooking";
 
 export function buildTrialMessage(input: TrialBookingInput) {
@@ -11,7 +11,6 @@ export function buildTrialMessage(input: TrialBookingInput) {
     `Phone: ${input.phone}`,
     `Course: ${courseName}`,
     `Age group: ${input.ageGroup}`,
-    `Class mode: ${MODE_LABELS[input.mode]}`,
     `Preferred time: ${input.slot}`,
   ];
 

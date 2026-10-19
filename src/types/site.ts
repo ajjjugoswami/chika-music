@@ -39,3 +39,7 @@ export interface Highlight {
   title: string;
   description: string;
 }
+
+export interface ImageHighlight extends Highlight {
+  imageId: string;
+}

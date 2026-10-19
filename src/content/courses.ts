@@ -9,7 +9,6 @@ export const courses: Course[] = [
     description:
       "Learn acoustic and electric guitar with a clear, song-first approach. We build strong fundamentals — posture, chords, strumming and picking — and quickly put them to work on Bollywood, pop and Western tracks you actually want to play.",
     minAge: 7,
-    modes: ["studio", "online"],
     styles: ["Acoustic", "Electric", "Bollywood", "Western pop", "Fingerstyle"],
     forWho: [
       "Complete beginners who have never held a guitar",
@@ -57,7 +56,6 @@ export const courses: Course[] = [
     description:
       "Piano is the best way to understand how music works. Lessons combine technique, reading notation and playing by ear, with repertoire ranging from Western classical to Bollywood melodies on piano and keyboard.",
     minAge: 5,
-    modes: ["studio", "online"],
     styles: ["Western classical", "Keyboard", "Bollywood", "Pop", "Music theory"],
     forWho: [
       "Young children starting their musical journey",
@@ -105,7 +103,6 @@ export const courses: Course[] = [
     description:
       "Learn harmonium the traditional way — sargam, alankars and raag basics — while building the skills to accompany bhajans, ghazals and classical vocals. A perfect companion to vocal training.",
     minAge: 7,
-    modes: ["studio"],
     styles: ["Hindustani classical", "Bhajan", "Ghazal", "Devotional", "Accompaniment"],
     forWho: [
       "Vocal students who want to accompany themselves",
@@ -152,7 +149,6 @@ export const courses: Course[] = [
     description:
       "Vocal training grounded in Hindustani classical technique — riyaz, sur and taal — applied to the music you love, from light classical and devotional to Bollywood. Every lesson is tailored to your voice and range.",
     minAge: 6,
-    modes: ["studio", "online"],
     styles: ["Hindustani classical", "Light classical", "Bollywood", "Devotional", "Ghazal"],
     forWho: [
       "Children who love to sing",
