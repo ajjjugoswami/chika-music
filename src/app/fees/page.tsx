@@ -1,4 +1,5 @@
 import { FeeFactors } from "@/components/sections/fees/FeeFactors";
+import { PageBreadcrumbJsonLd } from "@/components/ui/PageBreadcrumbJsonLd";
 import { FaqSection } from "@/components/sections/shared/FaqSection";
 import { TrialCta } from "@/components/sections/shared/TrialCta";
 import { PageHeader } from "@/components/ui/PageHeader";
@@ -27,6 +28,7 @@ export default function FeesPage() {
       <FeeFactors />
       <FaqSection faqs={generalFaqs} />
       <TrialCta />
+      <PageBreadcrumbJsonLd name="Fees & FAQ" path="/fees" />
     </>
   );
 }

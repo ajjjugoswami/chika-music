@@ -9,7 +9,7 @@ import { ThemeProvider } from "@/components/layout/ThemeProvider";
 import { SocialFloat } from "@/components/layout/SocialFloat";
 import { JsonLd } from "@/components/ui/JsonLd";
 import { siteConfig } from "@/content/site";
-import { musicSchoolSchema } from "@/lib/seo/jsonLd";
+import { musicSchoolSchema, websiteSchema } from "@/lib/seo/jsonLd";
 import { getSiteUrl } from "@/lib/utils/siteUrl";
 import "./globals.css";
 
@@ -43,8 +43,17 @@ export const metadata: Metadata = {
     "vocal classes Rohtak",
     "singing classes Rohtak",
     "Hindustani classical music Rohtak",
+    "music classes near me Rohtak",
+    "best music academy in Rohtak",
+    "music classes for kids Rohtak",
+    "keyboard classes Rohtak",
+    "Bollywood singing classes Rohtak",
     "Chika Gochwal",
   ],
+  other: {
+    "geo.region": "IN-HR",
+    "geo.placename": `${siteConfig.address.locality}, ${siteConfig.address.city}`,
+  },
   alternates: { canonical: "/" },
   robots: {
     index: true,
@@ -68,10 +77,8 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: [
-    { media: "(prefers-color-scheme: light)", color: "#ffffff" },
-    { media: "(prefers-color-scheme: dark)", color: "#0a0a0a" },
-  ],
+  themeColor: "#0a0a0a",
+  colorScheme: "dark light",
   width: "device-width",
   initialScale: 1,
   viewportFit: "cover",
@@ -96,7 +103,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
             <MobileActionBar />
           </MotionProvider>
         </ThemeProvider>
-        <JsonLd data={musicSchoolSchema(getSiteUrl())} />
+        <JsonLd data={[musicSchoolSchema(getSiteUrl()), websiteSchema(getSiteUrl())]} />
         <Analytics />
       </body>
     </html>

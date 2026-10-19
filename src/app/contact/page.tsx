@@ -1,4 +1,5 @@
 import { Reveal } from "@/components/motion/Reveal";
+import { PageBreadcrumbJsonLd } from "@/components/ui/PageBreadcrumbJsonLd";
 import { ContactActions } from "@/components/sections/contact/ContactActions";
 import { ContactPanel } from "@/components/sections/contact/ContactPanel";
 import { LocationMap } from "@/components/sections/contact/LocationMap";
@@ -35,9 +36,10 @@ export default function ContactPage() {
         </Reveal>
       </section>
 
-      <section className="container-x pb-section">
+      <section className="container-x py-section">
         <LocationMap />
       </section>
+      <PageBreadcrumbJsonLd name="Contact" path="/contact" />
     </>
   );
 }

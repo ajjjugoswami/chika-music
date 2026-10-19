@@ -1,6 +1,7 @@
 import { TrialBookingForm } from "@/components/forms/trial-booking/TrialBookingForm";
 import { Reveal } from "@/components/motion/Reveal";
 import { TrialSteps } from "@/components/sections/book-trial/TrialSteps";
+import { PageBreadcrumbJsonLd } from "@/components/ui/PageBreadcrumbJsonLd";
 import { getCourse } from "@/lib/data/courses";
 import { buildPageMetadata } from "@/lib/seo/metadata";
 
@@ -16,6 +17,7 @@ export default async function BookTrialPage({ searchParams }: PageProps<"/book-t
   const defaultCourse = typeof course === "string" && getCourse(course) ? course : undefined;
 
   return (
+    <>
     <section className="container-x grid gap-12 pt-12 pb-section md:pt-20 lg:grid-cols-[1fr_1.35fr] lg:gap-20">
       <Reveal onLoad>
         <p className="eyebrow text-accent-text">Book a trial</p>
@@ -32,5 +34,7 @@ export default async function BookTrialPage({ searchParams }: PageProps<"/book-t
         <TrialBookingForm defaultCourse={defaultCourse} />
       </Reveal>
     </section>
+    <PageBreadcrumbJsonLd name="Book a trial" path="/book-trial" />
+    </>
   );
 }

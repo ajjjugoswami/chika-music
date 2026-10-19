@@ -5,15 +5,26 @@ interface PageMetaInput {
   title: string;
   description: string;
   path: string;
+  keywords?: string[];
 }
 
-export function buildPageMetadata({ title, description, path }: PageMetaInput): Metadata {
+export const BASE_KEYWORDS = [
+  "music academy Rohtak",
+  "music classes in Rohtak",
+  "music classes Model Town Rohtak",
+  "Future Music Academy",
+];
+
+export function buildPageMetadata({ title, description, path, keywords = [] }: PageMetaInput): Metadata {
+  const fullTitle = `${title} · ${siteConfig.name}`;
+
   return {
     title,
     description,
+    keywords: [...keywords, ...BASE_KEYWORDS],
     alternates: { canonical: path },
     openGraph: {
-      title: `${title} · ${siteConfig.name}`,
+      title: fullTitle,
       description,
       url: path,
       siteName: siteConfig.name,
@@ -22,7 +33,7 @@ export function buildPageMetadata({ title, description, path }: PageMetaInput): 
     },
     twitter: {
       card: "summary_large_image",
-      title: `${title} · ${siteConfig.name}`,
+      title: fullTitle,
       description,
     },
   };

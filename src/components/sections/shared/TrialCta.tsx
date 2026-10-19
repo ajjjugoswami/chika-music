@@ -17,7 +17,7 @@ export function TrialCta({ courseSlug, courseName, imageId = "guitar-hero" }: Tr
   const bookHref = courseSlug ? `/book-trial?course=${courseSlug}` : "/book-trial";
 
   return (
-    <section className="container-x pb-section">
+    <section className="container-x py-section">
       <Reveal className="grid overflow-hidden rounded-panel bg-stage lg:grid-cols-[1.15fr_1fr]">
         <div className="relative h-40 sm:h-56 lg:order-2 lg:h-auto">
           <Parallax>

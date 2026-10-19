@@ -4,7 +4,7 @@ import type { Course } from "@/types/course";
 
 export function OtherCourses({ courses }: { courses: Course[] }) {
   return (
-    <section className="container-x pb-section">
+    <section className="container-x py-section">
       <SectionIntro label="Explore more" title="Pair it with another course." />
       <div className="mt-10 grid gap-3 sm:mt-12 sm:grid-cols-3">
         {courses.map((course, index) => (

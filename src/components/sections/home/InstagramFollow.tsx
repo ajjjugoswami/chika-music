@@ -8,7 +8,7 @@ export function InstagramFollow() {
   const { instagram } = siteConfig.social;
 
   return (
-    <section className="container-x pb-section">
+    <section className="container-x py-section">
       <Reveal className="relative overflow-hidden rounded-panel bg-linear-120 from-[#feda75] via-[#d62976] to-[#4f5bd5] p-px">
         <div className="flex flex-col gap-6 rounded-[calc(var(--radius-panel)-1px)] bg-card p-6 sm:flex-row sm:items-center sm:justify-between sm:p-9">
           <div className="flex items-center gap-4">

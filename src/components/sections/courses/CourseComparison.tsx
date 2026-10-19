@@ -14,7 +14,7 @@ const ROWS: { label: string; render: (course: Course) => ReactNode }[] = [
 
 export function CourseComparison({ courses }: { courses: Course[] }) {
   return (
-    <section className="container-x pb-section">
+    <section className="container-x py-section">
       <SectionIntro label="At a glance" title="Compare courses side by side." />
       <Reveal className="mt-12 overflow-x-auto rounded-2xl border border-line bg-card">
         <table className="w-full min-w-176 text-left text-[15px]">

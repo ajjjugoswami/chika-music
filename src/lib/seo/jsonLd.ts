@@ -1,4 +1,5 @@
 import { siteConfig } from "@/content/site";
+import { getAllCourses } from "@/lib/data/courses";
 import type { Course } from "@/types/course";
 import type { Faq } from "@/types/site";
 
@@ -12,9 +13,11 @@ export function musicSchoolSchema(siteUrl: string) {
     slogan: siteConfig.tagline,
     description: siteConfig.description,
     url: siteUrl,
+    logo: `${siteUrl}/logo-light.png`,
+    image: `${siteUrl}/opengraph-image`,
     telephone: contact.phoneE164,
-    sameAs: [siteConfig.social.instagram.url],
     founder: { "@type": "Person", name: siteConfig.founder },
+    sameAs: [siteConfig.social.instagram.url],
     address: {
       "@type": "PostalAddress",
       addressLocality: `${address.locality}, ${address.city}`,
@@ -24,6 +27,26 @@ export function musicSchoolSchema(siteUrl: string) {
     },
     areaServed: { "@type": "City", name: address.city },
     knowsAbout: ["Guitar", "Piano", "Harmonium", "Vocal music", "Hindustani classical music"],
+    hasOfferCatalog: {
+      "@type": "OfferCatalog",
+      name: "Music courses",
+      itemListElement: getAllCourses().map((course) => ({
+        "@type": "Offer",
+        itemOffered: { "@type": "Course", name: `${course.name} classes`, url: `${siteUrl}/courses/${course.slug}` },
+      })),
+    },
+  };
+}
+
+export function websiteSchema(siteUrl: string) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "@id": `${siteUrl}/#website`,
+    name: siteConfig.name,
+    url: siteUrl,
+    inLanguage: "en-IN",
+    publisher: { "@id": `${siteUrl}/#academy` },
   };
 }
 
@@ -36,6 +59,7 @@ export function courseSchema(course: Course, siteUrl: string) {
     url: `${siteUrl}/courses/${course.slug}`,
     provider: { "@type": "MusicSchool", "@id": `${siteUrl}/#academy`, name: siteConfig.name },
     educationalLevel: "Beginner to Advanced",
+    inLanguage: ["en", "hi"],
     hasCourseInstance: {
       "@type": "CourseInstance",
       courseMode: "Onsite",

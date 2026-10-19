@@ -1,4 +1,5 @@
 import { AboutStory } from "@/components/sections/about/AboutStory";
+import { PageBreadcrumbJsonLd } from "@/components/ui/PageBreadcrumbJsonLd";
 import { LearningPath } from "@/components/sections/home/LearningPath";
 import { TrialCta } from "@/components/sections/shared/TrialCta";
 import { NumberedList } from "@/components/ui/NumberedList";
@@ -35,6 +36,7 @@ export default function AboutPage() {
       </section>
       <LearningPath />
       <TrialCta />
+      <PageBreadcrumbJsonLd name="About" path="/about" />
     </>
   );
 }

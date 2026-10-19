@@ -7,7 +7,7 @@ import { LearnerGroups } from "@/components/sections/home/LearnerGroups";
 import { LearningGoals } from "@/components/sections/home/LearningGoals";
 import { LearningPath } from "@/components/sections/home/LearningPath";
 import { PhotoStrip } from "@/components/sections/home/PhotoStrip";
-import { ToolsTeaser } from "@/components/sections/home/ToolsTeaser";
+import { PracticeTools } from "@/components/sections/home/PracticeTools";
 import { FaqSection } from "@/components/sections/shared/FaqSection";
 import { TrialCta } from "@/components/sections/shared/TrialCta";
 import { generalFaqs } from "@/content/academy";
@@ -23,7 +23,7 @@ export default function HomePage() {
       <LearningPath />
       <PhotoStrip />
       <LearnerGroups />
-      <ToolsTeaser />
+      <PracticeTools />
       <FaqSection faqs={generalFaqs} />
       <InstagramFollow />
       <TrialCta />

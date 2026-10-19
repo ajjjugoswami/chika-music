@@ -28,6 +28,14 @@ export async function generateMetadata({ params }: PageProps<"/courses/[slug]">)
     title: `${course.name} Classes in Rohtak`,
     description: `${course.tagline} ${course.name} classes for ages ${course.minAge}+ at ${siteConfig.name}, ${siteConfig.address.locality}, ${siteConfig.address.city}. Book a trial class.`,
     path: `/courses/${course.slug}`,
+    keywords: [
+      `${course.name.toLowerCase()} classes Rohtak`,
+      `${course.name.toLowerCase()} classes near me`,
+      `learn ${course.name.toLowerCase()} in Rohtak`,
+      `${course.name.toLowerCase()} teacher Rohtak`,
+      `${course.name.toLowerCase()} classes for kids Rohtak`,
+      ...course.styles.map((style) => `${style.toLowerCase()} ${course.name.toLowerCase()} classes`),
+    ],
   });
 }
 

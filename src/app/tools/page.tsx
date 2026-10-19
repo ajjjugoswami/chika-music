@@ -1,16 +1,15 @@
-import { Reveal, RevealItem } from "@/components/motion/Reveal";
-import { Metronome } from "@/components/sections/tools/Metronome";
-import { SargamKeyboard } from "@/components/sections/tools/SargamKeyboard";
-import { Tanpura } from "@/components/sections/tools/Tanpura";
 import { TrialCta } from "@/components/sections/shared/TrialCta";
+import { PageBreadcrumbJsonLd } from "@/components/ui/PageBreadcrumbJsonLd";
+import { PracticeToolsGrid } from "@/components/sections/tools/PracticeToolsGrid";
 import { PageHeader } from "@/components/ui/PageHeader";
 import { buildPageMetadata } from "@/lib/seo/metadata";
 
 export const metadata = buildPageMetadata({
-  title: "Free Practice Tools — Metronome, Tanpura & Sargam Keyboard",
+  title: "Free Practice Tools — Tanpura, Metronome & Sargam Keyboard",
   description:
-    "Free in-browser metronome, tanpura drone and sargam keyboard for daily riyaz and practice, from Future Music Academy, Rohtak.",
+    "Free in-browser tanpura drone, metronome and sargam keyboard for daily riyaz and practice, from Future Music Academy, Rohtak.",
   path: "/tools",
+  keywords: ["online tanpura", "free metronome", "sargam keyboard", "riyaz tanpura app", "tanpura drone online"],
 });
 
 export default function ToolsPage() {
@@ -26,19 +25,10 @@ export default function ToolsPage() {
         description="A metronome, tanpura drone and sargam keyboard — free for every student. Turn your volume up and press play."
       />
       <section className="container-x pb-section">
-        <Reveal stagger className="grid gap-4 lg:grid-cols-2">
-          <RevealItem>
-            <Tanpura className="h-full" />
-          </RevealItem>
-          <RevealItem>
-            <Metronome className="h-full" />
-          </RevealItem>
-          <RevealItem className="lg:col-span-2">
-            <SargamKeyboard />
-          </RevealItem>
-        </Reveal>
+        <PracticeToolsGrid />
       </section>
       <TrialCta imageId="vocal-hero" />
+      <PageBreadcrumbJsonLd name="Practice tools" path="/tools" />
     </>
   );
 }

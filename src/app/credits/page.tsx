@@ -1,4 +1,5 @@
 import { PageHeader } from "@/components/ui/PageHeader";
+import { PageBreadcrumbJsonLd } from "@/components/ui/PageBreadcrumbJsonLd";
 import { audioCredits } from "@/content/audio";
 import { getImageCredits } from "@/lib/data/images";
 import { buildPageMetadata } from "@/lib/seo/metadata";
@@ -61,6 +62,7 @@ export default function CreditsPage() {
           ))}
         </ul>
       </section>
+      <PageBreadcrumbJsonLd name="Photo credits" path="/credits" />
     </>
   );
 }

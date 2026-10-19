@@ -1,4 +1,5 @@
 import { CourseTile } from "@/components/cards/CourseTile";
+import { PageBreadcrumbJsonLd } from "@/components/ui/PageBreadcrumbJsonLd";
 import { CourseComparison } from "@/components/sections/courses/CourseComparison";
 import { TrialCta } from "@/components/sections/shared/TrialCta";
 import { PageHeader } from "@/components/ui/PageHeader";
@@ -43,6 +44,7 @@ export default function CoursesPage() {
       </section>
       <CourseComparison courses={courses} />
       <TrialCta />
+      <PageBreadcrumbJsonLd name="Courses" path="/courses" />
     </>
   );
 }
