@@ -1,0 +1,98 @@
+.header {
+  position: fixed;
+  inset-inline: 0;
+  top: 0;
+  z-index: 50;
+  padding-top: env(safe-area-inset-top);
+  color: var(--color-ink);
+  background-color: var(--color-paper);
+  transition:
+    background-color 0.4s var(--ease-out-expo),
+    box-shadow 0.4s var(--ease-out-expo);
+}
+
+.header[data-scrolled] {
+  background-color: color-mix(in srgb, var(--color-paper) 84%, transparent);
+  -webkit-backdrop-filter: saturate(160%) blur(18px);
+  backdrop-filter: saturate(160%) blur(18px);
+  box-shadow: inset 0 -1px 0 var(--color-line);
+}
+
+.header[data-menu-open] {
+  background-color: var(--color-paper);
+  -webkit-backdrop-filter: none;
+  backdrop-filter: none;
+}
+
+.navLink {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.5rem 0.95rem;
+  font-size: 14.5px;
+  font-weight: 500;
+  white-space: nowrap;
+  color: var(--color-ink-soft);
+  transition: color 0.25s ease;
+}
+
+.navLink:hover,
+.navLink[aria-current="page"],
+.navLink[aria-expanded="true"] {
+  color: var(--color-ink);
+}
+
+.navLink::after {
+  content: "";
+  position: absolute;
+  left: 0.95rem;
+  right: 0.95rem;
+  bottom: 0.2rem;
+  height: 1.5px;
+  border-radius: 2px;
+  background: var(--color-accent);
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.5s var(--ease-out-expo);
+}
+
+.navLink:hover::after,
+.navLink[aria-current="page"]::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+.iconButton {
+  display: none;
+}
+
+.cta {
+  display: inline-flex;
+  align-items: center;
+  height: 2.375rem;
+  padding-inline: 1rem;
+  border-radius: 999px;
+  font-size: 13.5px;
+  font-weight: 500;
+  white-space: nowrap;
+  color: #ffffff;
+  background-color: var(--color-accent);
+  transition: background-color 0.3s ease;
+}
+
+.cta:hover {
+  background-color: var(--color-accent-hover);
+}
+
+@media (min-width: 40rem) {
+  .cta {
+    height: 2.75rem;
+    padding-inline: 1.4rem;
+    font-size: 14.5px;
+  }
+
+  .iconButton {
+    display: grid;
+  }
+}

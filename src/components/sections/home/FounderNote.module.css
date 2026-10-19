@@ -1,0 +1,24 @@
+.section {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  color: #ffffff;
+  background:
+    radial-gradient(70% 80% at 100% 0%, rgb(194 65 12 / 0.28) 0%, transparent 60%),
+    var(--color-stage);
+}
+
+.wave {
+  position: absolute;
+  inset: auto 0 0 auto;
+  width: min(42rem, 70%);
+  height: 60%;
+  opacity: 0.16;
+  pointer-events: none;
+  z-index: -1;
+}
+
+.wave > * {
+  inset: auto 0 0 0;
+  height: 100%;
+}

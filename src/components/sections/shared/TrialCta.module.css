@@ -1,0 +1,38 @@
+.card {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  padding: clamp(2rem, 6vw, 5rem);
+  padding-bottom: clamp(9rem, 16vw, 12rem);
+  border-radius: calc(var(--radius-card) * 1.5);
+  background:
+    radial-gradient(80% 90% at 0% 0%, rgb(194 65 12 / 0.35) 0%, transparent 60%),
+    var(--color-stage);
+}
+
+.keys {
+  position: absolute;
+  inset: auto 0 0 0;
+  height: clamp(7rem, 14vw, 10rem);
+  opacity: 0.9;
+  pointer-events: none;
+  z-index: -1;
+}
+
+.keys > * {
+  height: 100%;
+}
+
+@media (min-width: 64rem) {
+  .card {
+    padding-bottom: clamp(2rem, 6vw, 5rem);
+  }
+
+  .keys {
+    inset: 0 0 0 auto;
+    width: 40%;
+    height: auto;
+    -webkit-mask-image: linear-gradient(to right, transparent, #000 40%);
+    mask-image: linear-gradient(to right, transparent, #000 40%);
+  }
+}
