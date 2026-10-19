@@ -12,6 +12,7 @@ import { FooterColumn } from "./FooterColumn";
 
 const ACADEMY_LINKS = [
   { label: "About", href: "/about" },
+  { label: "Practice tools", href: "/tools" },
   { label: "Fees & FAQ", href: "/fees" },
   { label: "Contact", href: "/contact" },
   { label: "Book a trial", href: "/book-trial" },

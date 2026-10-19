@@ -2,7 +2,7 @@ import type { MetadataRoute } from "next";
 import { getAllCourses } from "@/lib/data/courses";
 import { getSiteUrl } from "@/lib/utils/siteUrl";
 
-const STATIC_ROUTES = ["", "/courses", "/about", "/fees", "/contact", "/book-trial", "/credits"];
+const STATIC_ROUTES = ["", "/courses", "/about", "/fees", "/contact", "/book-trial", "/tools", "/credits"];
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const siteUrl = getSiteUrl();

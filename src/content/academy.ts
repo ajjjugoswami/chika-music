@@ -40,6 +40,25 @@ export const learnerGroups: Highlight[] = [
   },
 ];
 
+export const learningGoals: Highlight[] = [
+  {
+    title: "Play your favourite songs",
+    description: "Bollywood, pop and devotional songs arranged for your level.",
+  },
+  {
+    title: "Stage & competitions",
+    description: "Prepare for school functions, competitions and family events.",
+  },
+  {
+    title: "Classical foundations",
+    description: "Sargam, raag, taal and proper technique, step by step.",
+  },
+  {
+    title: "Music as a hobby",
+    description: "Relaxed weekly classes to unwind and enjoy making music.",
+  },
+];
+
 export const academyValues: Highlight[] = [
   {
     title: "Strong foundations",

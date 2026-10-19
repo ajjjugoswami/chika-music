@@ -38,6 +38,7 @@ export const analyticsConfig = {
 
 export const mainNav: NavItem[] = [
   { label: "About", href: "/about" },
+  { label: "Practice tools", href: "/tools" },
   { label: "Fees & FAQ", href: "/fees" },
   { label: "Contact", href: "/contact" },
 ];
@@ -46,6 +47,7 @@ export const mobileNav: NavItem[] = [
   { label: "Home", href: "/" },
   { label: "Courses", href: "/courses" },
   { label: "About", href: "/about" },
+  { label: "Practice tools", href: "/tools" },
   { label: "Fees & FAQ", href: "/fees" },
   { label: "Contact", href: "/contact" },
   { label: "Book a trial", href: "/book-trial" },
