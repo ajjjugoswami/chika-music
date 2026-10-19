@@ -10,6 +10,7 @@ export interface SiteConfig {
   description: string;
   url: string;
   founder: string;
+  contactFormSrc: string;
   contact: {
     phoneDisplay: string;
     phoneE164: string;
@@ -26,9 +27,7 @@ export interface SiteConfig {
   };
   hours: { days: string; time: string }[];
   social: {
-    instagram: { url: string; handle: string };
-    youtube: { url: string; handle: string };
-  };
+    instagram: { url: string; handle: string };  };
 }
 
 export interface Faq {

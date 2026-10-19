@@ -8,6 +8,7 @@ export const siteConfig: SiteConfig = {
     "Guitar, piano, harmonium and vocal classes in Model Town, Rohtak. Personal coaching for children and adults by Chika Gochwal. Admissions open.",
   url: "https://futuremusicacademy.in",
   founder: "Chika Gochwal",
+  contactFormSrc: "https://forms.daorbit.in/form/6ad5e6dff45d3b66ce14df2e/view",
   contact: {
     phoneDisplay: "+91 70563 50917",
     phoneE164: "+917056350917",
@@ -27,9 +28,7 @@ export const siteConfig: SiteConfig = {
     { days: "Sunday", time: "10:00 am – 2:00 pm" },
   ],
   social: {
-    instagram: { url: "https://www.instagram.com/", handle: "@futuremusicacademy" },
-    youtube: { url: "https://www.youtube.com/", handle: "Future Music Academy" },
-  },
+    instagram: { url: "https://www.instagram.com/chika_gochhwall/", handle: "@chika_gochhwall" },  },
 };
 
 export const analyticsConfig = {

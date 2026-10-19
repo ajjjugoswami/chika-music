@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { FaWhatsapp } from "react-icons/fa6";
+import { FaInstagram, FaWhatsapp } from "react-icons/fa6";
 import { ArrowNudge } from "@/components/ui/ButtonLink";
 import { Logo } from "@/components/ui/Logo";
 import { ThemeToggle } from "@/components/ui/ThemeToggle";
@@ -80,10 +80,19 @@ export function Footer() {
                 href={buildWhatsAppLink()}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-1.5 hover:text-ink"
+                className="flex items-center gap-1.5 hover:text-ink"
               >
                 <FaWhatsapp className="size-3.5 text-[#25d366]" />
                 WhatsApp
+              </a>
+              <a
+                href={siteConfig.social.instagram.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-1.5 hover:text-ink"
+              >
+                <FaInstagram className="size-3.5 text-[#e1306c]" />
+                {siteConfig.social.instagram.handle}
               </a>
               <p>{siteConfig.founder}</p>
             </div>

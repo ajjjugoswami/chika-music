@@ -1,6 +1,6 @@
 import { MapPin, Phone } from "lucide-react";
 import Link from "next/link";
-import { FaWhatsapp } from "react-icons/fa6";
+import { FaInstagram, FaWhatsapp } from "react-icons/fa6";
 import { ThemeToggle } from "@/components/ui/ThemeToggle";
 import { mobileNav, siteConfig } from "@/content/site";
 import { getAllCourses } from "@/lib/data/courses";
@@ -8,7 +8,7 @@ import { buildWhatsAppLink } from "@/lib/utils/whatsapp";
 import styles from "./MobileMenu.module.css";
 
 export function MobileMenu({ onClose }: { onClose: () => void }) {
-  const { contact, address } = siteConfig;
+  const { contact, address, social } = siteConfig;
 
   return (
     <div id="mobile-menu" className={styles.menu}>
@@ -45,6 +45,10 @@ export function MobileMenu({ onClose }: { onClose: () => void }) {
           <a href={`tel:${contact.phoneE164}`} className="flex items-center gap-2.5">
             <Phone className="size-4 text-muted" aria-hidden />
             {contact.phoneDisplay}
+          </a>
+          <a href={social.instagram.url} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2.5">
+            <FaInstagram className="size-4 text-[#e1306c]" />
+            {social.instagram.handle}
           </a>
           <p className="flex items-center gap-2.5">
             <MapPin className="size-4 text-muted" aria-hidden />

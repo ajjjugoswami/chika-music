@@ -46,7 +46,7 @@ export function HeroStage() {
         <div className="flex items-center justify-between gap-6">
           <div>
             <p className="text-[11px] font-medium text-muted">Today&apos;s riyaz</p>
-            <p className="text-[14px] font-semibold tracking-[-0.01em]">Raag Yaman · Sa Re Ga</p>
+            <p className="text-[14px] font-semibold tracking-[-0.01em] whitespace-nowrap">Raag Yaman</p>
           </div>
           <EqualizerBars />
         </div>

@@ -16,7 +16,10 @@ export function Hero() {
       <div className="container-x grid items-center gap-12 pt-10 pb-16 sm:pt-16 lg:grid-cols-[minmax(0,0.95fr)_minmax(0,1.05fr)] lg:gap-10 lg:py-16">
         <div className="flex flex-col items-center text-center lg:items-start lg:text-left">
           <AnnouncementPill href="/book-trial" label="New batch" className="rise rise-1">
-            Admissions open · {address.locality}, {address.city}
+            Admissions open
+            <span className="hidden sm:inline">
+              · {address.locality}, {address.city}
+            </span>
           </AnnouncementPill>
 
           <h1 className="mt-7 text-display-2xl font-semibold">

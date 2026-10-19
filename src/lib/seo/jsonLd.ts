@@ -13,6 +13,7 @@ export function musicSchoolSchema(siteUrl: string) {
     description: siteConfig.description,
     url: siteUrl,
     telephone: contact.phoneE164,
+    sameAs: [siteConfig.social.instagram.url],
     founder: { "@type": "Person", name: siteConfig.founder },
     address: {
       "@type": "PostalAddress",

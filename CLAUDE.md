@@ -116,7 +116,7 @@ All business details live in `src/content/site.ts`. Values marked (dummy) are pl
 | Address | Model Town, Rohtak, Haryana, India (real; full street address to confirm) |
 | Email | `hello@futuremusicacademy.in` (dummy) |
 | Hours | `Mon–Sat 10:00–20:00, Sun 10:00–14:00` (dummy) |
-| Instagram / YouTube | dummy URLs |
+| Instagram | https://www.instagram.com/chika_gochhwall/ (real) |
 
 The owner's old poster (neon purple, emoji, green circle) is reference for **content only**. Do not copy its visual style; the site follows §3.
 

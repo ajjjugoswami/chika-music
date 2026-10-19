@@ -94,7 +94,7 @@
   right: 4%;
   bottom: 5%;
   z-index: 2;
-  width: min(17rem, 56%);
+  width: min(18rem, 58%);
   padding: 0.9rem 1rem 1rem;
   border-radius: 1.1rem;
   border: 1px solid var(--color-line);
@@ -135,16 +135,40 @@
 }
 
 @media (max-width: 39.99rem) {
+  .stage {
+    max-width: 24rem;
+    aspect-ratio: 1 / 1.08;
+  }
+
+  .guitar {
+    top: 8%;
+    height: 86%;
+    margin-left: calc(-86% * 220 / 520 / 2 * 1.08);
+  }
+
+  .rings span {
+    top: -5rem;
+    left: -5rem;
+    width: 10rem;
+    height: 10rem;
+  }
+
+  .chipPiano {
+    top: 4%;
+    left: 0;
+  }
+
   .chipHarmonium {
-    top: 40%;
+    top: 36%;
+    right: 0;
   }
 
   .chipVocal {
-    display: none;
+    bottom: 8%;
+    left: 0;
   }
 
   .nowPlaying {
-    width: 62%;
-    padding: 0.7rem 0.8rem 0.8rem;
+    display: none;
   }
 }
